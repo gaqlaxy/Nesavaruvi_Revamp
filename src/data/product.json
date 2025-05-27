@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Silk Blouse",
+    "price": 89.99,
+    "image": "/prod1.png",
+    "category": "Women"
+  },
+  {
+    "id": 2,
+    "name": "Leather Jacket",
+    "price": 299.99,
+    "image": "/prod2.png",
+    "category": "Men"
+  },
+  {
+    "id": 3,
+    "name": "Running Shoes",
+    "price": 120.0,
+    "image": "/prod3.png",
+    "category": "Sports"
+  },
+  {
+    "id": 4,
+    "name": "Wool Sweater",
+    "price": 75.5,
+    "image": "/prod1.png",
+    "category": "Women"
+  }
+]
