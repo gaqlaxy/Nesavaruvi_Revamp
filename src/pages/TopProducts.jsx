@@ -1,4 +1,4 @@
-// components/TopProducts.jsx
+// // components/TopProducts.jsx
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -109,3 +109,95 @@ export default function TopProducts({ products }) {
     </section>
   );
 }
+
+// // GPT
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const products = [
+//   {
+//     id: 1,
+//     title: "Floral Kurti",
+//     price: 999,
+//     image: "/prod1.png",
+//   },
+//   {
+//     id: 2,
+//     title: "Embroidered Saree",
+//     price: 1299,
+//     image: "/prod2.png",
+//   },
+//   {
+//     id: 3,
+//     title: "Designer Blouse",
+//     price: 1099,
+//     image: "/prod3.png",
+//   },
+//   {
+//     id: 4,
+//     title: "Festive Lehenga",
+//     price: 899,
+//     image: "/prod1.png",
+//   },
+// ];
+
+// export default function TopProducts() {
+//   const cardRefs = useRef([]);
+
+//   useEffect(() => {
+//     cardRefs.current.forEach((card) => {
+//       const children = gsap.utils.toArray(
+//         card.querySelectorAll(".animate-item")
+//       );
+
+//       gsap.from(children, {
+//         opacity: 0,
+//         y: 40,
+//         duration: 0.8,
+//         stagger: 0.15,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: card,
+//           start: "top 85%",
+//         },
+//       });
+//     });
+//   }, []);
+
+//   return (
+//     <section className="py-16 bg-white text-black">
+//       <div className="text-center mb-12">
+//         <h2 className="text-4xl font-bold">Top Products</h2>
+//         <p className="text-gray-600 mt-2">Most loved by our customers</p>
+//       </div>
+
+//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4">
+//         {products.map((product, index) => (
+//           <div
+//             key={product.id}
+//             ref={(el) => (cardRefs.current[index] = el)}
+//             className="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+//           >
+//             <img
+//               src={product.image}
+//               alt={product.title}
+//               className="w-full h-64 object-cover animate-item"
+//             />
+//             <div className="p-4 text-center space-y-2">
+//               <h3 className="text-xl font-semibold animate-item">
+//                 {product.title}
+//               </h3>
+//               <p className="text-gray-700 animate-item">₹{product.price}</p>
+//               <button className="mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300 animate-item">
+//                 Add to Cart
+//               </button>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </section>
+//   );
+// }
