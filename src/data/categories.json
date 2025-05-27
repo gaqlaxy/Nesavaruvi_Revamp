@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Women's Fashion",
+        "description": "Elegant dresses, tops and accessories",
+        "image": "/Prod1.png"
+    },
+    {
+        "id": 2,
+        "name": "Men's Collection",
+        "description": "Premium suits, shirts and footwear",
+        "image": "/Prod2.png"
+    },
+    {
+        "id": 3,
+        "name": "Accessories",
+        "description": "Watches, bags and jewelry",
+        "image": "/Prod3.png"
+    },
+    {
+        "id": 4,
+        "name": "Activewear",
+        "description": "High-performance sportswear",
+        "image": "/Prod1.png"
+    }
+]

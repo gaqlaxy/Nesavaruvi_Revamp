@@ -3,6 +3,8 @@ import Marquee from "./components/Marquee";
 import Navbar from "./components/Navbar";
 import HeroSection from "./pages/HeroSection";
 import TopProducts from "./pages/TopProducts";
+import Categories from "./components/Categories";
+import About from "./components/About";
 
 export default function App() {
   const texts = [
@@ -38,12 +40,36 @@ export default function App() {
       image: "/prod1.png",
     },
   ];
+  const categories = [
+    {
+      id: 1,
+      title: "Luxury Bags",
+      image: "/images/bags-category.jpg",
+    },
+    {
+      id: 2,
+      title: "Jewelry",
+      image: "/images/jewelry-category.jpg",
+    },
+    {
+      id: 3,
+      title: "Accessories",
+      image: "/images/accessories-category.jpg",
+    },
+    {
+      id: 4,
+      title: "Footwear",
+      image: "/images/footwear-category.jpg",
+    },
+  ];
   return (
     <>
       <Marquee texts={texts} />
       <Navbar />
       <HeroSection />
       <TopProducts products={products} />
+      <Categories />
+      <About />
     </>
   );
 }

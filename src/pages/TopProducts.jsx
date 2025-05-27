@@ -73,7 +73,7 @@ export default function TopProducts({ products }) {
       <div className="max-w-7xl mx-auto">
         <h2
           ref={headingRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16"
+          className="text-3xl md:text-3xl font-bold text-center mb-16"
         >
           Featured Collections
         </h2>
