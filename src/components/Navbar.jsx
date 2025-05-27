@@ -35,13 +35,17 @@ export default function Navbar({ cartCount }) {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="fixed w-full top-10 z-50 bg-white shadow-sm">
+    <nav className=" w-full top-10 z-50 bg-white shadow-sm">
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         {/* <div className="text-2xl font-bold">Boutique</div>
          */}
-        <img src="./logo.png" alt="Nesavaruvi Boutique's Logo" />
+        <img
+          src="./logo.png"
+          alt="Nesavaruvi Boutique's Logo"
+          className="h-12 md:h-12 object-contain"
+        />
 
         {/* Navigation Links */}
         <div className="flex space-x-8">
@@ -49,7 +53,7 @@ export default function Navbar({ cartCount }) {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="hover:text-gray-600 transition-colors"
+              className="hover:text-[#e67e22] transition-colors text-lg font-bold tracking-wide"
             >
               {item}
             </a>
@@ -79,11 +83,7 @@ export default function Navbar({ cartCount }) {
 
         {/* Logo */}
         {/* <div className="text-xl font-bold">Boutique</div> */}
-        <img
-          src="./logo.png"
-          alt="Nesavaruvi Boutique's Logo"
-          //   className="w-24"
-        />
+        <img src="./logo.png" alt="Nesavaruvi Boutique's Logo" />
 
         {/* Cart */}
         <button className="relative flex items-center space-x-2 p-2">

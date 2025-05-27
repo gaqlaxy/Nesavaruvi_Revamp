@@ -14,12 +14,12 @@ export default function Marquee({ texts }) {
   }, []);
 
   return (
-    <div className="overflow-hidden bg-black text-white py-2">
+    <div className="overflow-hidden bg-black text-[#e67e22] py-2">
       <div ref={marqueeRef} className="whitespace-nowrap flex">
         {[...Array(6)].map((_, i) => (
           <span key={i} className="px-4 text-lg font-medium">
             {texts.map((text, index) => (
-              <span key={index} className="mx-4">
+              <span key={index} className="mx-4 ">
                 ✨ {text} ✨
               </span>
             ))}
@@ -33,7 +33,8 @@ export default function Marquee({ texts }) {
 Marquee.defaultProps = {
   texts: [
     "50% OFF on Select Items",
-    "Free Shipping Available",
-    "Limited Time Offer",
+    "Free Shipping Above Rs.2000",
+    "Anniversary Sale: Up to 20% OFF on All Products",
+    "Buy 1 Get 1 Free on Selected Products",
   ],
 };
