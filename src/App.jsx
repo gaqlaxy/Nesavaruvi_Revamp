@@ -5,6 +5,9 @@ import HeroSection from "./pages/HeroSection";
 import TopProducts from "./pages/TopProducts";
 import Categories from "./components/Categories";
 import About from "./components/About";
+import Testimonials from "./components/Testimonials";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Contact from "./components/Contact";
 
 export default function App() {
   const texts = [
@@ -70,6 +73,9 @@ export default function App() {
       <TopProducts products={products} />
       <Categories />
       <About />
+      <Testimonials />
+      <WhyChooseUs />
+      <Contact />
     </>
   );
 }
