@@ -8,6 +8,7 @@ import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   const texts = [
@@ -76,6 +77,7 @@ export default function App() {
       <Testimonials />
       <WhyChooseUs />
       <Contact />
+      <Footer />
     </>
   );
 }
