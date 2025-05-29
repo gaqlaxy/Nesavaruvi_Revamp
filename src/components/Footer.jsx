@@ -313,9 +313,13 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email address"
+                required
                 className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
               <button
+                // onClick={(e) => e.preventDefault()}
+                // Replace with actual subscription logic
+
                 type="submit"
                 className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition"
               >
