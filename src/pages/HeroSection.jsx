@@ -42,7 +42,7 @@ export default function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="h-[80vh] grid md:grid-cols-2 sm:grid-cols-1 relative overflow-hidden"
+      className="h-screen grid md:grid-cols-2 sm:grid-cols-1 relative overflow-hidden"
     >
       {/* Left Hero Item */}
       <div className="relative group h-[80vh] md:h-auto">
