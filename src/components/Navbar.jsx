@@ -6,9 +6,28 @@ export default function Navbar({ cartCount }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef();
   const overlayRef = useRef();
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   // GSAP animations for mobile menu
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Animate the navbar background color on scroll
+
     if (isMobileMenuOpen) {
       gsap.to(mobileMenuRef.current, {
         x: 0,
@@ -35,7 +54,12 @@ export default function Navbar({ cartCount }) {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className=" w-full top-10 z-50 bg-white shadow-sm">
+    // <nav className=" w-full top-10 z-50 bg-white shadow-sm">
+    <nav
+      className={`fixed w-full top-10 z-50 bg-white ${
+        hasScrolled ? "shadow-sm" : ""
+      }`}
+    >
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
