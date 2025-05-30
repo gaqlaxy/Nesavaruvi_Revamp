@@ -324,7 +324,7 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1667665970118-f55705003914?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-  { id: 2, title: "Sarees", image: "/Hero3.jpeg" },
+  { id: 2, title: "Sarees", image: "/hero3.jpeg" },
   {
     id: 3,
     title: "Lehengas",

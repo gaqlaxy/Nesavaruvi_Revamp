@@ -46,7 +46,7 @@ export default function HeroSection() {
     >
       {/* Left Hero Item */}
       <div className="relative group h-[80vh] md:h-auto">
-        <div className="absolute inset-0 bg-[url('./Hero1.jpg')] bg-cover bg-center transform transition-transform duration-700 " />
+        <div className="absolute inset-0 bg-[url('./hero1.jpg')] bg-cover bg-center transform transition-transform duration-700 " />
 
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-8">
           <div className="text-center space-y-6">
@@ -70,7 +70,7 @@ export default function HeroSection() {
 
       {/* Right Hero Item */}
       <div className="relative group h-[80vh] md:h-auto">
-        <div className="absolute inset-0 bg-[url('./Hero2.jpg')] bg-cover bg-center transform transition-transform duration-700" />
+        <div className="absolute inset-0 bg-[url('./hero2.jpg')] bg-cover bg-center transform transition-transform duration-700" />
 
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-8">
           <div className="text-center space-y-6">
