@@ -5,12 +5,12 @@ import { CustomEase } from "gsap/all";
 gsap.registerPlugin(CustomEase);
 
 const images = [
-  "./prod1.png",
-  "./prod2.png",
-  "./prod3.png",
-  "./Hero1.jpg",
-  "./Hero2.jpg",
-  "./Hero3.jpeg",
+  "/prod1.png",
+  "/prod2.png",
+  "/prod3.png",
+  "/hero1.jpg",
+  "/hero2.jpg",
+  "/hero3.jpeg",
 
   //   "https://cdn.cosmos.so/ce9f9fd7-a2a5-476d-9757-481ca01b5861.jpeg",
   //   "https://cdn.cosmos.so/94579ea4-daee-43f9-b778-84156b731361.jpeg",
