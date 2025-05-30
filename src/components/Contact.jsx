@@ -67,7 +67,7 @@ const ContactSection = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e67e22] focus:border-transparent transition"
                   placeholder="Your name"
                 />
               </div>
@@ -81,7 +81,7 @@ const ContactSection = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e67e22] focus:border-transparent transition"
                   placeholder="you@example.com"
                 />
               </div>
@@ -95,7 +95,7 @@ const ContactSection = () => {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e67e22]  focus:border-transparent transition"
                   placeholder="How can we help?"
                 />
               </div>
@@ -109,7 +109,7 @@ const ContactSection = () => {
                   name="message"
                   required
                   rows="4"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#e67e22]  focus:border-transparent transition"
                   placeholder="Your message..."
                 ></textarea>
               </div>
@@ -117,17 +117,17 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full py-3 bg-teal-600 text-white font-medium rounded-lg transition ${
+                className={`w-full py-3 bg-[#e67e22] text-white font-medium rounded-lg transition ${
                   isLoading
                     ? "opacity-70 cursor-not-allowed"
-                    : "hover:bg-teal-700"
+                    : "hover:bg-[#e98b38]"
                 }`}
               >
                 {isLoading ? "Sending..." : "Send Message"}
               </button>
 
               {isSubmitted && (
-                <div className="mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-center">
+                <div className="mt-4 p-3 bg-green-100 text-[#e67e22] rounded-lg text-center">
                   Message sent successfully! We'll get back to you soon.
                 </div>
               )}
@@ -162,7 +162,7 @@ const ContactSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-center">
-                  <div className="mr-3 text-teal-600">
+                  <div className="mr-3 text-[#e67e22]">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -193,7 +193,7 @@ const ContactSection = () => {
 
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-center">
-                  <div className="mr-3 text-teal-600">
+                  <div className="mr-3 text-[#e67e22]">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -218,7 +218,7 @@ const ContactSection = () => {
 
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-center">
-                  <div className="mr-3 text-teal-600">
+                  <div className="mr-3 text-[#e67e22]">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -243,7 +243,7 @@ const ContactSection = () => {
 
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="flex items-center">
-                  <div className="mr-3 text-teal-600">
+                  <div className="mr-3 text-[#e67e22]">
                     <svg
                       className="w-6 h-6"
                       fill="none"

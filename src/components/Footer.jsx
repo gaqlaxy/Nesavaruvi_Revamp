@@ -169,7 +169,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href="#"
-                  className="w-10 h-10 rounded-full  bg-gray-800 flex items-center justify-center hover:bg-teal-600 transition-colors"
+                  className="w-10 h-10 rounded-full  bg-gray-800 flex items-center justify-center hover:bg-[#e67e22] transition-colors"
                 >
                   {social === "facebook" && (
                     <svg
@@ -269,7 +269,10 @@ const Footer = () => {
                 "Lookbook",
               ].map((link, i) => (
                 <li key={i}>
-                  <a href="#" className="hover:text-teal-400 transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#e67e22] transition-colors"
+                  >
                     {link}
                   </a>
                 </li>
@@ -292,7 +295,10 @@ const Footer = () => {
                 "Size Guide",
               ].map((link, i) => (
                 <li key={i}>
-                  <a href="#" className="hover:text-teal-400 transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-[#e67e22] transition-colors"
+                  >
                     {link}
                   </a>
                 </li>
@@ -314,14 +320,14 @@ const Footer = () => {
                 type="email"
                 placeholder="Your email address"
                 required
-                className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] text-gray-200 placeholder-gray-500 transition"
               />
               <button
                 // onClick={(e) => e.preventDefault()}
                 // Replace with actual subscription logic
 
                 type="submit"
-                className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition"
+                className="w-full py-3 bg-[#e67e22] hover:bg-[#e98b38] text-white font-medium rounded-lg transition"
               >
                 Subscribe
               </button>

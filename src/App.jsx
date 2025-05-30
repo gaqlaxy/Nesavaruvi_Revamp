@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Marquee from "./components/Marquee";
 import Navbar from "./components/Navbar";
 import HeroSection from "./pages/HeroSection";
@@ -9,8 +9,11 @@ import Testimonials from "./components/Testimonials";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
   const texts = [
     "50% OFF on Select Items",
     "Free Shipping Above Rs.2000",
@@ -68,16 +71,22 @@ export default function App() {
   ];
   return (
     <>
-      <Marquee texts={texts} />
-      <Navbar />
-      <HeroSection />
-      <TopProducts products={products} />
-      <Categories />
-      <About />
-      <Testimonials />
-      <WhyChooseUs />
-      <Contact />
-      <Footer />
+      {loading ? (
+        <Preloader onComplete={() => setLoading(false)} />
+      ) : (
+        <>
+          <Marquee texts={texts} />
+          <Navbar />
+          <HeroSection />
+          <TopProducts products={products} />
+          <Categories />
+          <About />
+          <Testimonials />
+          <WhyChooseUs />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
