@@ -360,11 +360,11 @@ export default function CategoriesSection() {
           Shop by Categories
         </h2>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2">
           {categories.map((cat, index) => (
             <div
               key={cat.id}
-              className="relative group h-[80vh] rounded-xl overflow-hidden"
+              className="relative group h-[100vh]  overflow-hidden"
             >
               {/* Background Image */}
               <div
