@@ -56,8 +56,11 @@ export default function Navbar({ cartCount }) {
   return (
     // <nav className=" w-full top-10 z-50 bg-white shadow-sm">
     <nav
-      className={`fixed w-full top-10 z-50 bg-white ${
-        hasScrolled ? "shadow-sm" : ""
+      // Control Shadow for mobile nav
+
+      className={`fixed  w-full top-10 z-50 bg-white transition-shadow duration-300 ${
+        hasScrolled ? " " : ""
+        // hasScrolled ? "shadow-sm, backdrop-blur, bg-white/90" : ""
       }`}
     >
       {/* Desktop Navigation */}
@@ -130,7 +133,7 @@ export default function Navbar({ cartCount }) {
       {/* Mobile Menu Drawer */}
       <div
         ref={mobileMenuRef}
-        className="fixed left-0 top-0 h-full w-64 bg-white shadow-xl z-50 transform -translate-x-full"
+        className="fixed left-0 top-10 h-full w-64 bg-white shadow-xl z-50 transform -translate-x-full"
       >
         <div className="p-4 border-b flex justify-between items-center">
           <div className="text-xl font-bold">Menu</div>

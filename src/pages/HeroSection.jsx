@@ -45,10 +45,10 @@ export default function HeroSection() {
       className="h-screen grid md:grid-cols-2 sm:grid-cols-1 relative overflow-hidden"
     >
       {/* Left Hero Item */}
-      <div className="relative group h-[80vh] md:h-auto">
+      <div className="relative group h-screen md:h-screen">
         <div className="absolute inset-0 bg-[url('/hero1.jpg')] bg-cover bg-center transform transition-transform duration-700 " />
 
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-8">
+        <div className="absolute inset-0 bg-black/30 flex items-end justify-center p-8">
           <div className="text-center space-y-6">
             <h2 className="text-4xl md:text-6xl font-bold text-white">
               Summer Collection
@@ -69,10 +69,10 @@ export default function HeroSection() {
       </div>
 
       {/* Right Hero Item */}
-      <div className="relative group h-[80vh] md:h-auto">
+      <div className="relative group h-screen md:h-screen">
         <div className="absolute inset-0 bg-[url('/hero2.jpg')] bg-cover bg-center transform transition-transform duration-700" />
 
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center p-8">
+        <div className="absolute inset-0 bg-black/30 flex items-end justify-center p-8">
           <div className="text-center space-y-6">
             <h2 className="text-4xl md:text-6xl font-bold text-white">
               New Arrivals

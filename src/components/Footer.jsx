@@ -351,7 +351,7 @@ const Footer = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+      {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden">
         <div className="flex justify-center">
           {[...Array(15)].map((_, i) => (
             <div
@@ -363,7 +363,7 @@ const Footer = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };
