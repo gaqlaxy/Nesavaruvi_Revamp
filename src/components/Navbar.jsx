@@ -37,18 +37,18 @@ export default function Navbar({ cartCount }) {
       gsap.to(overlayRef.current, {
         opacity: 1,
         duration: 0.2,
-        ease: "sine.out",
+        ease: "power2.out",
       });
     } else {
       gsap.to(mobileMenuRef.current, {
         x: "-100%",
         duration: 0.3,
-        ease: "power2.in",
+        ease: "power2.out",
       });
       gsap.to(overlayRef.current, {
         opacity: 0,
         duration: 0.2,
-        ease: "sine.out",
+        ease: "power2.out",
       });
     }
   }, [isMobileMenuOpen]);
@@ -136,7 +136,7 @@ export default function Navbar({ cartCount }) {
         className="fixed left-0 top-10 h-full w-64 bg-white shadow-xl z-50 transform -translate-x-full"
       >
         <div className="p-4 border-b flex justify-between items-center">
-          <div className="text-xl font-bold">Menu</div>
+          {/* <div className="text-xl font-bold">Menu</div> */}
           <button
             onClick={() => setIsMobileMenuOpen(false)}
             className="p-2 hover:text-gray-600"
