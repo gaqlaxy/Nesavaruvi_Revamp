@@ -248,7 +248,7 @@ export default function WhyChooseUs() {
       color: "bg-gradient-to-br from-[#e67e22] to-[#d35400]",
     },
   ];
-
+  // FB8000
   return (
     <section ref={sectionRef} className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
