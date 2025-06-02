@@ -5,9 +5,9 @@ import { CustomEase } from "gsap/all";
 gsap.registerPlugin(CustomEase);
 
 const images = [
-  "/prod1.png",
-  "/prod2.png",
-  "/prod3.png",
+  // "/prod1.png",
+  // "/prod2.png",
+  // "/prod3.png",
   "/hero1.jpg",
   "/hero2.jpg",
   "/hero3.jpeg",
