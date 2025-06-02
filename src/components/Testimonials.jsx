@@ -106,52 +106,52 @@ const Testimonials = () => {
       id: 1,
       color: "color1",
       title: "Ramya",
-      rating: 5,
+      // rating: 5,
       description:
         "A vision powered by creativity and a splash of light-hearted boldness.",
       location: "Chennai",
     },
     {
       id: 2,
-      color: "color2",
+      color: "color1",
       title: "Saranya",
-      rating: 4,
+      // rating: 4,
       description:
         "Every design begins with a playful thought and a soft edge of wonder.",
       location: "Chennai",
     },
     {
       id: 3,
-      color: "color3",
+      color: "color1",
       title: "Sarala",
-      rating: 5,
+      // rating: 5,
       description:
         "Let your work simmer with energy and burn bright on every screen.",
       location: "Chennai",
     },
     {
       id: 4,
-      color: "color4",
+      color: "color1",
       title: "Roshini",
-      rating: 4,
+      // rating: 4,
       description:
         "The night speaks in code and creativity, ready for your next idea.",
       location: "Chennai",
     },
     {
       id: 5,
-      color: "color5",
+      color: "color1",
       title: "Ocean Depths",
-      rating: 5,
+      // rating: 5,
       description:
         "Where calm logic meets complex flows beneath the surface of design.",
       location: "Chennai",
     },
     {
       id: 6,
-      color: "color6",
+      color: "color1",
       title: "Skyline Pulse",
-      rating: 4,
+      // rating: 4,
       description:
         "Move with clarity, build with momentum. You're ready for the climb.",
       location: "Chennai",
@@ -201,13 +201,13 @@ const Testimonials = () => {
     };
   }, [isMobile]);
 
-  const renderStars = (rating) => {
-    return [...Array(rating)].map((_, i) => (
-      <span key={i} className="text-yellow-400">
-        ★
-      </span>
-    ));
-  };
+  // const renderStars = (rating) => {
+  //   return [...Array(rating)].map((_, i) => (
+  //     <span key={i} className="text-yellow-400">
+  //       ★
+  //     </span>
+  //   ));
+  // };
 
   return (
     <section className="py-12 sm:py-20 overflow-hidden ">
@@ -229,23 +229,23 @@ const Testimonials = () => {
                   hover:rotate-0 hover:scale-105 group`}
               >
                 <h3
-                  className={`${styles.cardHeading} ${
-                    styles[card.color + "Heading"]
-                  }`}
+                  className={`text-xl sm:text-2xl font-bold mb-2 ${
+                    styles.cardHeading
+                  } ${styles[card.color + "Heading"]}`}
                 >
                   {card.title}
                 </h3>
-                <div className="flex items-center mb-4">
+                {/* <div className="flex items-center mb-4">
                   {renderStars(card.rating)}
-                </div>
+                </div> */}
                 <p className="text-sm sm:text-base mb-4 leading-relaxed">
                   {card.description}
                 </p>
                 <div className="flex items-center justify-between mt-6">
                   <span className="text-sm text-gray-600">{card.location}</span>
-                  <button className="text-sm font-medium group-hover:underline">
+                  {/* <button className="text-sm font-medium group-hover:underline">
                     Read more →
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}

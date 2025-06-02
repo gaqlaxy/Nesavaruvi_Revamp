@@ -29,8 +29,11 @@
 }
 
 .cardHeading {
-  font-family: "Bungee Shade", cursive;
-  font-size: 1.6rem;
+  /* font-family: "Bungee Shade", cursive; */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  /* font-style: bold; */
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }
@@ -62,7 +65,7 @@
 }
 
 .color1Heading {
-  color: #ffc567;
+  color: #e67e22;
 }
 .color2Heading {
   color: #fd7da8;

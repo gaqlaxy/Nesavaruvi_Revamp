@@ -224,13 +224,15 @@ export default function WhyChooseUs() {
       title: "Artisan Excellence",
       description: "Hand-crafted with precision and care by skilled artisans",
       icon: "👑",
-      color: "bg-gradient-to-br from-purple-500 to-indigo-600",
+      // color: "bg-gradient-to-br from-purple-500 to-indigo-600",
+      color: "bg-gradient-to-br from-amber-500 to-orange-600",
     },
     {
       title: "Sustainable Fashion",
       description: "Eco-friendly materials and ethical production practices",
       icon: "🌱",
-      color: "bg-gradient-to-br from-emerald-500 to-teal-600",
+      // color: "bg-gradient-to-br from-emerald-500 to-teal-600",
+      color: "bg-gradient-to-br from-amber-500 to-orange-600",
     },
     {
       title: "Custom Fits",
@@ -242,15 +244,17 @@ export default function WhyChooseUs() {
       title: "24/7 Support",
       description: "Always here to help with your fashion needs",
       icon: "💫",
-      color: "bg-gradient-to-br from-pink-500 to-rose-600",
+      // color: "bg-gradient-to-br from-pink-500 to-rose-600",
+      color: "bg-gradient-to-br from-[#e67e22] to-[#d35400]",
     },
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gray-50">
+    <section ref={sectionRef} className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-pink-600">
+          <h2 className="text-5xl font-bold ">
+            {/* <h2 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-pink-600"> */}
             Why Choose Us?
           </h2>
           <p className="mt-4 text-lg text-gray-600">
@@ -312,7 +316,8 @@ export default function WhyChooseUs() {
         <div className="mt-16 text-center">
           <button
             ref={buttonRef}
-            className="relative px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 
+            className="relative px-8 py-4 bg-[#e67e22] hover:bg-[#d35400] 
+                       text-lg  tracking-wide  uppercase
                        text-white rounded-full font-bold shadow-lg 
                        hover:shadow-orange-500/25 transition-shadow duration-300"
           >
