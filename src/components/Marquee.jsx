@@ -40,7 +40,7 @@
 
 //   return (
 
-//     <div className=" overflow-hidden bg-black text-[#e67e22] py-2">
+//     <div className=" overflow-hidden bg-black text-[#FB8000] py-2">
 //       <div ref={marqueeRef} className="whitespace-nowrap flex">
 //         {[...Array(6)].map((_, i) => (
 //           <span key={i} className="px-4 text-lg font-medium">
@@ -107,7 +107,7 @@
 
 //   return (
 //     <div ref={containerRef} className="relative z-50">
-//       <div className="overflow-hidden bg-black text-[#e67e22] py-2">
+//       <div className="overflow-hidden bg-black text-[#FB8000] py-2">
 //         <div ref={marqueeRef} className="whitespace-nowrap flex">
 //           {[...Array(6)].map((_, i) => (
 //             <span key={i} className="px-4 text-lg font-medium">
@@ -184,7 +184,7 @@
 
 //   return (
 //     <div ref={containerRef} className="relative z-[999] will-change-transform">
-//       <div className="overflow-hidden bg-black text-[#e67e22] py-2 fixed w-full">
+//       <div className="overflow-hidden bg-black text-[#FB8000] py-2 fixed w-full">
 //         <div ref={marqueeRef} className="whitespace-nowrap flex">
 //           {[...Array(6)].map((_, i) => (
 //             <span key={i} className="px-4 text-lg font-medium">
@@ -231,7 +231,7 @@ export default function Marquee({ texts }) {
           className="whitespace-nowrap flex will-change-transform"
         >
           {[...Array(6)].map((_, i) => (
-            <span key={i} className="px-4 text-lg font-medium text-[#e67e22]">
+            <span key={i} className="px-4 text-lg font-medium text-[#FB8000]">
               {texts.map((text, index) => (
                 <span key={index} className="mx-4">
                   ✨ {text} ✨

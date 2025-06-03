@@ -58,7 +58,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="relative bg-white py-24 px-6 md:px-12">
+    <section className="relative bg-white py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Video Block */}
         <div className="relative overflow-hidden rounded-xl shadow-xl">
@@ -77,7 +77,7 @@ export default function AboutSection() {
         {/* Text Block */}
         <div
           ref={textBlockRef}
-          className="bg-[#e67e22] text-white p-10 rounded-xl shadow-2xl relative z-10 -mt-16 md:mt-0 md:-ml-20"
+          className="bg-[#FB8000] text-white p-10 rounded-xl shadow-2xl relative z-10 -mt-16 md:mt-0 md:-ml-20"
         >
           <h2 className="text-4xl font-bold mb-6">Who We Are</h2>
           <p className="mb-6 text-lg text-gray-200 leading-relaxed">
@@ -102,10 +102,6 @@ export default function AboutSection() {
               </li>
             ))}
           </ul>
-
-          <button className="mt-8 inline-block bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-            Discover the Story →
-          </button>
         </div>
       </div>
     </section>

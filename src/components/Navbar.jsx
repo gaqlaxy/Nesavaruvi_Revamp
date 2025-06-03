@@ -80,7 +80,7 @@ export default function Navbar({ cartCount }) {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="hover:text-[#e67e22] transition-colors text-lg font-bold tracking-wide"
+              className="hover:text-[#FB8000] transition-colors text-lg font-bold tracking-wide"
             >
               {item}
             </a>

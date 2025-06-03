@@ -745,7 +745,7 @@ export default function TopProducts() {
                 <button
                   onClick={() => slideProducts("prev")}
                   disabled={!canScrollLeft}
-                  className={`group p-3 lg:p-4 border border-black relative overflow-hidden
+                  className={`group p-3 lg:p-4 border border-[#FB8000] relative overflow-hidden
                               ${
                                 !canScrollLeft
                                   ? "opacity-50 cursor-not-allowed"
@@ -757,7 +757,7 @@ export default function TopProducts() {
                     ←
                   </span>
                   <div
-                    className={`absolute inset-0 bg-black transform scale-x-0 origin-left 
+                    className={`absolute inset-0 bg-[#FB8000] transform scale-x-0 origin-left 
                                   transition-transform duration-300 
                                   ${
                                     canScrollLeft
@@ -769,7 +769,7 @@ export default function TopProducts() {
                 <button
                   onClick={() => slideProducts("next")}
                   disabled={!canScrollRight}
-                  className={`group p-3 lg:p-4 border border-black relative overflow-hidden
+                  className={`group p-3 lg:p-4 border border-[#FB8000] relative overflow-hidden
                               ${
                                 !canScrollRight
                                   ? "opacity-50 cursor-not-allowed"
@@ -781,7 +781,7 @@ export default function TopProducts() {
                     →
                   </span>
                   <div
-                    className={`absolute inset-0 bg-black transform scale-x-0 origin-left 
+                    className={`absolute inset-0 bg-[#FB8000] transform scale-x-0 origin-left 
                                   transition-transform duration-300 
                                   ${
                                     canScrollRight
@@ -813,14 +813,14 @@ export default function TopProducts() {
                       className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 
                                opacity-0 group-hover:opacity-100 transition-all duration-300"
                     />
-                    <button
+                    {/* <button
                       className="absolute bottom-4 left-4 right-4 py-2 bg-white/90 
                                  backdrop-blur-sm text-sm font-medium opacity-0 translate-y-4 
                                  transition-all duration-300 group-hover:opacity-100 
                                  group-hover:translate-y-0 hover:bg-black hover:text-white"
                     >
                       Quick View
-                    </button>
+                    </button> */}
                   </div>
 
                   <div className="mt-4 space-y-2">
@@ -836,7 +836,7 @@ export default function TopProducts() {
                       </span>
                       <button
                         className="relative overflow-hidden px-3 lg:px-4 py-1.5 
-                                   bg-transparent border border-black group/btn"
+                                   bg-transparent border border-[#FB8000] group/btn"
                       >
                         <span
                           className="relative z-10 text-sm transition-colors duration-300 
@@ -845,7 +845,7 @@ export default function TopProducts() {
                           View
                         </span>
                         <div
-                          className="absolute inset-0 bg-black transform scale-x-0 origin-left 
+                          className="absolute inset-0 bg-[#FB8000] transform scale-x-0 origin-left 
                                    transition-transform duration-300 group-hover/btn:scale-x-100"
                         />
                       </button>

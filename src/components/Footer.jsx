@@ -169,7 +169,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href="#"
-                  className="w-10 h-10 rounded-full  bg-gray-800 flex items-center justify-center hover:bg-[#e67e22] transition-colors"
+                  className="w-10 h-10 rounded-full  bg-gray-800 flex items-center justify-center hover:bg-[#FB8000] transition-colors"
                 >
                   {social === "facebook" && (
                     <svg
@@ -271,7 +271,7 @@ const Footer = () => {
                 <li key={i}>
                   <a
                     href="#"
-                    className="hover:text-[#e67e22] transition-colors"
+                    className="hover:text-[#FB8000] transition-colors"
                   >
                     {link}
                   </a>
@@ -297,7 +297,7 @@ const Footer = () => {
                 <li key={i}>
                   <a
                     href="#"
-                    className="hover:text-[#e67e22] transition-colors"
+                    className="hover:text-[#FB8000] transition-colors"
                   >
                     {link}
                   </a>
@@ -320,14 +320,14 @@ const Footer = () => {
                 type="email"
                 placeholder="Your email address"
                 required
-                className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#e67e22] text-gray-200 placeholder-gray-500 transition"
+                className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FB8000] text-gray-200 placeholder-gray-500 transition"
               />
               <button
                 // onClick={(e) => e.preventDefault()}
                 // Replace with actual subscription logic
 
                 type="submit"
-                className="w-full py-3 bg-[#e67e22] hover:bg-[#e98b38] text-white font-medium rounded-lg transition"
+                className="w-full py-3 bg-[#FB8000] hover:bg-[#e98b38] text-white font-medium rounded-lg transition"
               >
                 Subscribe
               </button>

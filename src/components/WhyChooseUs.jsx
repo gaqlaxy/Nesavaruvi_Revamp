@@ -245,7 +245,7 @@ export default function WhyChooseUs() {
       description: "Always here to help with your fashion needs",
       icon: "💫",
       // color: "bg-gradient-to-br from-pink-500 to-rose-600",
-      color: "bg-gradient-to-br from-[#e67e22] to-[#d35400]",
+      color: "bg-gradient-to-br from-[#FB8000] to-[#d35400]",
     },
   ];
   // FB8000
@@ -316,7 +316,7 @@ export default function WhyChooseUs() {
         <div className="mt-16 text-center">
           <button
             ref={buttonRef}
-            className="relative px-8 py-4 bg-[#e67e22] hover:bg-[#d35400] 
+            className="relative px-8 py-4 bg-[#FB8000] hover:bg-[#d35400] 
                        text-lg  tracking-wide  uppercase
                        text-white rounded-full font-bold shadow-lg 
                        hover:shadow-orange-500/25 transition-shadow duration-300"
