@@ -23,11 +23,24 @@ const ContactSection = () => {
     setIsLoading(true);
 
     try {
+      // await emailjs.sendForm(
+      //   // "EMAILJS_SERVICE_ID",
+      //   "process.env.REACT_APP_EMAILJS_SERVICE_ID",
+      //   // "EMAILJS_TEMPLATE_ID",
+      //   "process.env.REACT_APP_EMAILJS_TEMPLATE_ID",
+      //   formRef.current,
+      //   // "EMAILJS_USER_ID"
+      //   "process.env.REACT_APP_EMAILJS_USER_ID"
+      // );
       await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        // import.meta.env.REACT_APP_EMAILJS_SERVICE_ID,
+        // import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        // formRef.current,
+        // import.meta.env.REACT_APP_EMAILJS_USER_ID
+        "process.env.REACT_APP_EMAILJS_SERVICE_ID",
+        "process.env.REACT_APP_EMAILJS_TEMPLATE_ID",
         formRef.current,
-        "YOUR_USER_ID"
+        "process.env.REACT_APP_EMAILJS_USER_ID"
       );
 
       setIsSubmitted(true);
@@ -36,9 +49,16 @@ const ContactSection = () => {
 
       // Reset success message after 3 seconds
       setTimeout(() => setIsSubmitted(false), 3000);
+      // } catch (error) {
+      //   setIsLoading(false);
+      //   alert("Failed to send message. Please try again.");
+      // }
     } catch (error) {
+      console.error(error);
+      alert(
+        "Failed to send: " + (error?.text || error?.message || "Unknown error")
+      );
       setIsLoading(false);
-      alert("Failed to send message. Please try again.");
     }
   };
 
