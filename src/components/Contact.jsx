@@ -17,46 +17,73 @@ const ContactSection = () => {
       ease: "power3.out",
     });
   }, []);
+  useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
+    // try {
+    //   // await emailjs.sendForm(
+    //   //   // "EMAILJS_SERVICE_ID",
+    //   //   "process.env.REACT_APP_EMAILJS_SERVICE_ID",
+    //   //   // "EMAILJS_TEMPLATE_ID",
+    //   //   "process.env.REACT_APP_EMAILJS_TEMPLATE_ID",
+    //   //   formRef.current,
+    //   //   // "EMAILJS_USER_ID"
+    //   //   "process.env.REACT_APP_EMAILJS_USER_ID"
+    //   // );
+    //   await emailjs.sendForm(
+    //     // import.meta.env.REACT_APP_EMAILJS_SERVICE_ID,
+    //     // import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    //     // formRef.current,
+    //     // import.meta.env.REACT_APP_EMAILJS_USER_ID
+    //     "process.env.REACT_APP_EMAILJS_SERVICE_ID",
+    //     "process.env.REACT_APP_EMAILJS_TEMPLATE_ID",
+    //     formRef.current,
+    //     "process.env.REACT_APP_EMAILJS_USER_ID"
+    //   );
+
+    //   setIsSubmitted(true);
+    //   setIsLoading(false);
+    //   formRef.current.reset();
+
+    //   // Reset success message after 3 seconds
+    //   setTimeout(() => setIsSubmitted(false), 3000);
+    //   // } catch (error) {
+    //   //   setIsLoading(false);
+    //   //   alert("Failed to send message. Please try again.");
+    //   // }
+    // } catch (error) {
+    //   console.error(error);
+    //   alert(
+    //     "Failed to send: " + (error?.text || error?.message || "Unknown error")
+    //   );
+    //   setIsLoading(false);
+    // }
     try {
-      // await emailjs.sendForm(
-      //   // "EMAILJS_SERVICE_ID",
-      //   "process.env.REACT_APP_EMAILJS_SERVICE_ID",
-      //   // "EMAILJS_TEMPLATE_ID",
-      //   "process.env.REACT_APP_EMAILJS_TEMPLATE_ID",
-      //   formRef.current,
-      //   // "EMAILJS_USER_ID"
-      //   "process.env.REACT_APP_EMAILJS_USER_ID"
-      // );
-      await emailjs.sendForm(
-        // import.meta.env.REACT_APP_EMAILJS_SERVICE_ID,
-        // import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        // formRef.current,
-        // import.meta.env.REACT_APP_EMAILJS_USER_ID
-        "process.env.REACT_APP_EMAILJS_SERVICE_ID",
-        "process.env.REACT_APP_EMAILJS_TEMPLATE_ID",
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "process.env.REACT_APP_EMAILJS_USER_ID"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
+      console.log("Success:", result.text);
       setIsSubmitted(true);
       setIsLoading(false);
       formRef.current.reset();
 
-      // Reset success message after 3 seconds
       setTimeout(() => setIsSubmitted(false), 3000);
-      // } catch (error) {
-      //   setIsLoading(false);
-      //   alert("Failed to send message. Please try again.");
-      // }
     } catch (error) {
-      console.error(error);
+      console.error("Error details:", error);
       alert(
-        "Failed to send: " + (error?.text || error?.message || "Unknown error")
+        `Failed to send: ${
+          error.text || "Please check your EmailJS configuration"
+        }`
       );
       setIsLoading(false);
     }
