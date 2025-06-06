@@ -87,9 +87,9 @@ export default function CategoriesSection() {
         start: "top center",
       },
       opacity: 0,
-      y: 50,
+      y: 10,
       stagger: 0.2,
-      duration: 1,
+      duration: 0.5,
       ease: "power3.out",
     });
   }, []);
