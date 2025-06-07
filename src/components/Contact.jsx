@@ -103,10 +103,10 @@ const ContactSection = () => {
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Contact Form */}
-          <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
+          <div className="bg-gray-50 p-6 rounded-lg shadow-sm ">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-gray-700 mb-1 ">
                   Full Name
                 </label>
                 <input
@@ -114,7 +114,7 @@ const ContactSection = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000] focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000] focus:border-transparent transition  outline-none"
                   placeholder="Your name"
                 />
               </div>
@@ -128,7 +128,7 @@ const ContactSection = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000] focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000] focus:border-transparent transition outline-none"
                   placeholder="you@example.com"
                 />
               </div>
@@ -142,7 +142,7 @@ const ContactSection = () => {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000]  focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000]  focus:border-transparent transition  outline-none"
                   placeholder="How can we help?"
                 />
               </div>
@@ -156,7 +156,7 @@ const ContactSection = () => {
                   name="message"
                   required
                   rows="4"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000]  focus:border-transparent transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FB8000]  focus:border-transparent transition  outline-none"
                   placeholder="Your message..."
                 ></textarea>
               </div>
