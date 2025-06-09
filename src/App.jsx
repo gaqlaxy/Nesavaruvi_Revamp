@@ -10,6 +10,8 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductsPage from "./pages/ProductsPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -55,28 +57,7 @@ export default function App() {
         "Stunning gold bracelet with intricate designs, a perfect accessory for any outfit.",
     },
   ];
-  const categories = [
-    {
-      id: 1,
-      title: "Luxury Bags",
-      image: "/images/bags-category.jpg",
-    },
-    {
-      id: 2,
-      title: "Jewelry",
-      image: "/images/jewelry-category.jpg",
-    },
-    {
-      id: 3,
-      title: "Accessories",
-      image: "/images/accessories-category.jpg",
-    },
-    {
-      id: 4,
-      title: "Footwear",
-      image: "/images/footwear-category.jpg",
-    },
-  ];
+
   return (
     <>
       {loading ? (
@@ -95,6 +76,33 @@ export default function App() {
           <Footer />
         </>
       )}
+
+      <Routes>
+        <Route path="/products/:category" element={<ProductsPage />} />
+      </Routes>
     </>
   );
 }
+
+// const categories = [
+//   {
+//     id: 1,
+//     title: "Luxury Bags",
+//     image: "/images/bags-category.jpg",
+//   },
+//   {
+//     id: 2,
+//     title: "Jewelry",
+//     image: "/images/jewelry-category.jpg",
+//   },
+//   {
+//     id: 3,
+//     title: "Accessories",
+//     image: "/images/accessories-category.jpg",
+//   },
+//   {
+//     id: 4,
+//     title: "Footwear",
+//     image: "/images/footwear-category.jpg",
+//   },
+// ];
