@@ -29,10 +29,6 @@ export default function App() {
           <Footer />
         </>
       )}
-
-      <Routes>
-        <Route path="/products/:category" element={<ProductsPage />} />
-      </Routes>
     </>
   );
 }

@@ -80,7 +80,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CategoriesSection() {
   const sectionRef = useRef();
-  const navigate = useNavigate();
 
   useEffect(() => {
     gsap.from(sectionRef.current.children, {
