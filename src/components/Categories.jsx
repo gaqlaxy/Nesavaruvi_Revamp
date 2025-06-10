@@ -1,27 +1,28 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import categories from "../data/fullProdcuts.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const categories = [
-  {
-    id: 1,
-    title: "Kurtis",
-    image:
-      "https://images.unsplash.com/photo-1667665970118-f55705003914?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  { id: 2, title: "Sarees", image: "/hero3.jpeg" },
-  {
-    id: 3,
-    title: "Lehengas",
-    image:
-      "https://images.unsplash.com/photo-1746372283841-dbb3838f9935?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  { id: 4, title: "Gowns", image: "/prod2.png" },
-  { id: 5, title: "Blouses", image: "/prod1.png" },
-  { id: 6, title: "Dupattas", image: "/prod3.png" },
-];
+// const categories = [
+//   {
+//     id: 1,
+//     title: "Kurtis",
+//     image:
+//       "https://images.unsplash.com/photo-1667665970118-f55705003914?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//   },
+//   { id: 2, title: "Sarees", image: "/hero3.jpeg" },
+//   {
+//     id: 3,
+//     title: "Lehengas",
+//     image:
+//       "https://images.unsplash.com/photo-1746372283841-dbb3838f9935?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//   },
+//   { id: 4, title: "Gowns", image: "/prod2.png" },
+//   { id: 5, title: "Blouses", image: "/prod1.png" },
+//   { id: 6, title: "Dupattas", image: "/prod3.png" },
+// ];
 
 // export default function CategoriesSection() {
 //   const sectionRef = useRef();

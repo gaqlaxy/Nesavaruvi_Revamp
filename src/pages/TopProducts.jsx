@@ -547,6 +547,7 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import products from "../data/fullProdcuts.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -556,65 +557,66 @@ export default function TopProducts() {
   const headingRef = useRef();
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const featured = products.filter((p) => p.featured);
 
-  const products = [
-    {
-      id: 1,
-      name: "Luxury Handbag",
-      price: "299",
-      image: "/prod1.png",
-      description: "Hand-woven pure silk saree with intricate zari work.",
-    },
-    {
-      id: 2,
-      name: "Designer Sunglasses",
-      price: "189",
-      image: "/prod2.png",
-      description: "Handcrafted leather wallet with RFID protection.",
-    },
-    {
-      id: 3,
-      name: "Silk Scarf",
-      price: "89",
-      image: "/prod3.png",
-      description: "Elegant silk scarf with floral prints.",
-    },
-    {
-      id: 4,
-      name: "Gold Bracelet",
-      price: "159",
-      image: "/prod1.png",
-      description: "Stunning gold bracelet with intricate designs.",
-    },
-    {
-      id: 5,
-      name: "Crystal Necklace",
-      price: "249",
-      image: "/prod2.png",
-      description: "Exquisite crystal necklace for special occasions.",
-    },
-    {
-      id: 6,
-      name: "Pearl Earrings",
-      price: "129",
-      image: "/prod3.png",
-      description: "Classic pearl earrings with modern design.",
-    },
-    {
-      id: 7,
-      name: "Leather Wallet",
-      price: "79",
-      image: "/prod1.png",
-      description: "Premium leather wallet with multiple compartments.",
-    },
-    {
-      id: 8,
-      name: "Silver Watch",
-      price: "199",
-      image: "/prod2.png",
-      description: "Elegant silver watch with minimalist design.",
-    },
-  ];
+  // const products = [
+  //   {
+  //     id: 1,
+  //     name: "Luxury Handbag",
+  //     price: "299",
+  //     image: "/prod1.png",
+  //     description: "Hand-woven pure silk saree with intricate zari work.",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Designer Sunglasses",
+  //     price: "189",
+  //     image: "/prod2.png",
+  //     description: "Handcrafted leather wallet with RFID protection.",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Silk Scarf",
+  //     price: "89",
+  //     image: "/prod3.png",
+  //     description: "Elegant silk scarf with floral prints.",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Gold Bracelet",
+  //     price: "159",
+  //     image: "/prod1.png",
+  //     description: "Stunning gold bracelet with intricate designs.",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Crystal Necklace",
+  //     price: "249",
+  //     image: "/prod2.png",
+  //     description: "Exquisite crystal necklace for special occasions.",
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "Pearl Earrings",
+  //     price: "129",
+  //     image: "/prod3.png",
+  //     description: "Classic pearl earrings with modern design.",
+  //   },
+  //   {
+  //     id: 7,
+  //     name: "Leather Wallet",
+  //     price: "79",
+  //     image: "/prod1.png",
+  //     description: "Premium leather wallet with multiple compartments.",
+  //   },
+  //   {
+  //     id: 8,
+  //     name: "Silver Watch",
+  //     price: "199",
+  //     image: "/prod2.png",
+  //     description: "Elegant silver watch with minimalist design.",
+  //   },
+  // ];
 
   // WORKS FINEEEEE
   // const slideProducts = (direction) => {
@@ -797,7 +799,7 @@ export default function TopProducts() {
           {/* Right Content - Products */}
           <div className="w-full lg:w-[60%] overflow-hidden">
             <div ref={productContainerRef} className="flex gap-4 lg:gap-6">
-              {products.map((product) => (
+              {featured.map((product) => (
                 <div
                   key={product.id}
                   className="w-[180px] lg:w-[240px] flex-shrink-0 group"
