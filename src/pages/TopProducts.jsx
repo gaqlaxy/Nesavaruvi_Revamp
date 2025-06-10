@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import products from "../data/fullProdcuts.json"; // Adjust the path as necessary
+import products from "../data/fullProdcuts.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
