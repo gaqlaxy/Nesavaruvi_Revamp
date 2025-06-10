@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
 import HomePage from "./pages/HomePage";
+import { Route, Routes } from "react-router-dom";
+import ProductsPage from "./pages/ProductsPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -24,7 +26,11 @@ export default function App() {
         <>
           <Marquee texts={texts} />
           <Navbar />
-          <HomePage />
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products/:category" element={<ProductsPage />} />
+          </Routes>
 
           <Footer />
         </>
@@ -32,26 +38,3 @@ export default function App() {
     </>
   );
 }
-
-// const categories = [
-//   {
-//     id: 1,
-//     title: "Luxury Bags",
-//     image: "/images/bags-category.jpg",
-//   },
-//   {
-//     id: 2,
-//     title: "Jewelry",
-//     image: "/images/jewelry-category.jpg",
-//   },
-//   {
-//     id: 3,
-//     title: "Accessories",
-//     image: "/images/accessories-category.jpg",
-//   },
-//   {
-//     id: 4,
-//     title: "Footwear",
-//     image: "/images/footwear-category.jpg",
-//   },
-// ];
