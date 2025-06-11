@@ -121,6 +121,7 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   const footerRef = useRef();
@@ -157,7 +158,16 @@ const Footer = () => {
           >
             <div className="flex items-center">
               <div className="">
-                <img src="logo.png" alt="" />
+                {/* <img src="logo.png" alt="" /> */}
+                <img
+                  src={logo}
+                  alt="Nesavaruvi Boutique's Logo"
+                  className="h-12 md:h-12 object-contain"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/logo.png";
+                  }}
+                />
               </div>
             </div>
             <p className="leading-relaxed">

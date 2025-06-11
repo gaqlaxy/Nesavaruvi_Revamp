@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { HiOutlineMenu, HiShoppingCart, HiX } from "react-icons/hi";
+import logo from "../assets/logo.png";
 
 export default function Navbar({ cartCount }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -69,9 +70,14 @@ export default function Navbar({ cartCount }) {
         {/* <div className="text-2xl font-bold">Boutique</div>
          */}
         <img
-          src="./logo.png"
+          // src="./logo.png"
+          src={logo}
           alt="Nesavaruvi Boutique's Logo"
           className="h-12 md:h-12 object-contain"
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = "/logo.png";
+          }}
         />
 
         {/* Navigation Links */}
