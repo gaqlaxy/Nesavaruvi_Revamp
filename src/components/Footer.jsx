@@ -134,11 +134,11 @@ const Footer = () => {
       stagger: 0.15,
       duration: 0.8,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: "top bottom",
-        toggleActions: "play none none none",
-      },
+      // scrollTrigger: {
+      //   trigger: footerRef.current,
+      //   start: "top bottom",
+      //   toggleActions: "play none none none",
+      // },
     });
   }, []);
 
@@ -349,21 +349,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} Nesavaruvi. All rights reserved.</p>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      {/* <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <div className="flex justify-center">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 bg-teal-400 rounded-full mx-1 opacity-20"
-              style={{
-                animation: `pulse ${2 + Math.random() * 2}s infinite`,
-              }}
-            />
-          ))}
-        </div>
-      </div> */}
     </footer>
   );
 };

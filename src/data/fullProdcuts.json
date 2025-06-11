@@ -6,7 +6,8 @@
     "image": "https://images.unsplash.com/photo-1667665970118-f55705003914?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Kurtis",
     "slug": "floral-kurti-a",
-    "featured": true
+    "featured": true,
+    "description": "A beautiful floral kurti perfect for casual outings."
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "image": "hero3.jpeg",
     "category": "Sarees",
     "featured": true,
-    "slug": "embroidered-saree-b"
+    "slug": "embroidered-saree-b",
+    "description": "An elegant embroidered saree for festive occasions."
   },
   {
     "id": 3,
@@ -24,8 +26,8 @@
     "image": "hero2.jpg",
     "category": "Blouses",
     "featured": false,
-
-    "slug": "designer-blouse-c"
+    "slug": "designer-blouse-c",
+    "description": "A stylish designer blouse that complements any saree."
   },
   {
     "id": 4,
@@ -34,7 +36,8 @@
     "image": "hero1.jpg",
     "category": "Lehengas",
     "featured": false,
-    "slug": "festive-lehenga-d"
+    "slug": "festive-lehenga-d",
+    "description": "A vibrant lehenga perfect for festive celebrations."
   },
   {
     "id": 5,
@@ -43,7 +46,8 @@
     "image": "prod1.png",
     "category": "Duppatas",
     "featured": true,
-    "slug": "evening-gown-e"
+    "slug": "evening-gown-e",
+    "description": "A luxurious evening gown for special occasions."
   },
   {
     "id": 6,
@@ -52,7 +56,8 @@
     "image": "prod2.png",
     "category": "Dupattas",
     "featured": false,
-    "slug": "silk-dupatta-f"
+    "slug": "silk-dupatta-f",
+    "description": "A delicate silk dupatta for a refined look."
   },
   {
     "id": 7,
@@ -61,7 +66,8 @@
     "image": "prod4.png",
     "category": "Kurtis",
     "featured": false,
-    "slug": "casual-kurti-g"
+    "slug": "casual-kurti-g",
+    "description": "A comfortable casual kurti for everyday wear."
   },
   {
     "id": 8,
@@ -70,7 +76,8 @@
     "image": "hero2.jpg",
     "category": "Sarees",
     "featured": false,
-    "slug": "party-saree-h"
+    "slug": "party-saree-h",
+    "description": "A glamorous party saree for special occasions."
   },
   {
     "id": 9,
@@ -79,7 +86,8 @@
     "image": "prod2.png",
     "category": "Blouses",
     "featured": true,
-    "slug": "chikankari-blouse-i"
+    "slug": "chikankari-blouse-i",
+    "description": "A traditional chikankari blouse for a classic look."
   },
   {
     "id": 10,
@@ -88,7 +96,8 @@
     "image": "prod4.png",
     "category": "Lehengas",
     "featured": true,
-    "slug": "bridal-lehenga-j"
+    "slug": "bridal-lehenga-j",
+    "description": "A stunning bridal lehenga for weddings and special occasions."
   },
   {
     "id": 11,
@@ -97,15 +106,17 @@
     "image": "prod4.png",
     "category": "Duppatas",
     "featured": false,
-    "slug": "summer-gown-k"
+    "slug": "summer-gown-k",
+    "description": "A vibrant summer gown for a sunny day."
   },
   {
     "id": 12,
     "name": "Printed Dupatta L",
     "price": 599,
-    "image": "prod1.png",
+    "image": "hero1.jpg",
     "category": "Dupattas",
     "featured": true,
-    "slug": "printed-dupatta-l"
+    "slug": "printed-dupatta-l",
+    "description": "A trendy printed dupatta for a unique look."
   }
 ]
