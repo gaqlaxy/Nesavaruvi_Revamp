@@ -62,13 +62,25 @@ import React, { useRef, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import products from "../data/fullProdcuts.json";
+import { useCart } from "../context/CartContext";
 
 export default function ProductDetail() {
+  const { addToCart } = useCart();
+  const btnRef = useRef();
   const { id } = useParams();
   const navigate = useNavigate();
   const product = products.find((p) => String(p.id) === id);
   const [mainImage, setMainImage] = useState(product?.image);
   const containerRef = useRef();
+  const handleAdd = () => {
+    // pulse animation on button
+    gsap.fromTo(
+      btnRef.current,
+      { scale: 1 },
+      { scale: 1.1, duration: 0.1, yoyo: true, repeat: 1 }
+    );
+    addToCart(product);
+  };
 
   useEffect(() => {
     if (!product) return navigate(-1);
@@ -88,7 +100,10 @@ export default function ProductDetail() {
   const gallery = [product.image, "/prod1.png", "/prod2.png", "/prod3.png"]; // sample extras
 
   return (
-    <section className="py-16 px-4 max-w-6xl mx-auto" ref={containerRef}>
+    <section
+      className="py-16 px-4 max-w-6xl mx-auto pt-[160px] md:pt-[120px]"
+      ref={containerRef}
+    >
       <button
         onClick={() => navigate(-1)}
         className="text-teal-600 hover:underline mb-8"
@@ -146,21 +161,20 @@ export default function ProductDetail() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <button
-              onClick={() => {
-                /* addToCart logic */
-              }}
+              ref={btnRef}
+              onClick={handleAdd}
               className="flex-1 bg-teal-600 text-white py-3 rounded-full hover:bg-teal-700 transition"
             >
               Add to Cart
             </button>
-            <button
+            {/* <button
               onClick={() => {
-                /* enquiry via WhatsApp or email */
+                
               }}
               className="flex-1 border-2 border-teal-600 text-teal-600 py-3 rounded-full hover:bg-teal-600 hover:text-white transition"
             >
               Enquire Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

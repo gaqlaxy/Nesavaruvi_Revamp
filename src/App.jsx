@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetail from "./pages/ProductDetail";
+import CartPage from "./pages/CartPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/products/:category" element={<ProductsPage />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<CartPage />} />
           </Routes>
 
           <Footer />

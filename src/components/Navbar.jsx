@@ -2,12 +2,18 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { HiOutlineMenu, HiShoppingCart, HiX } from "react-icons/hi";
 import logo from "../assets/logo.png";
+import CartSidebar from "./CartSidebar";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-export default function Navbar({ cartCount }) {
+export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef();
   const overlayRef = useRef();
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const { cartItems } = useCart();
+  const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
 
   // GSAP animations for mobile menu
   useEffect(() => {
@@ -94,15 +100,15 @@ export default function Navbar({ cartCount }) {
         </div>
 
         {/* Cart */}
-        <button className="relative flex items-center space-x-2">
+        <Link to="/cart" className="relative flex items-center space-x-2">
           <HiShoppingCart className="w-6 h-6" />
-          {/* Cart Count */}
           {cartCount > 0 && (
-            <span className="bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">
+            <span className="bg-black text-[#FB8000] rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">
               {cartCount}
             </span>
           )}
-        </button>
+        </Link>
+        <CartSidebar isOpen={cartOpen} onClose={() => setCartOpen(false)} />
       </div>
 
       {/* Mobile Navigation */}
@@ -119,14 +125,15 @@ export default function Navbar({ cartCount }) {
         <img src="./logo.png" alt="Nesavaruvi Boutique's Logo" />
 
         {/* Cart */}
-        <button className="relative flex items-center space-x-2 p-2">
+
+        <Link to="/cart" className="relative flex items-center space-x-2 p-2">
           <HiShoppingCart className="w-6 h-6" />
           {cartCount > 0 && (
-            <span className="bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">
+            <span className="bg-black text-[#FB8000] rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">
               {cartCount}
             </span>
           )}
-        </button>
+        </Link>
       </div>
 
       {/* Mobile Menu Overlay */}
