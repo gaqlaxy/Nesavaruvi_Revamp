@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import products from "../data/fullProdcuts.json";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,103 +14,6 @@ export default function TopProducts() {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const featured = products.filter((p) => p.featured);
-
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: "Luxury Handbag",
-  //     price: "299",
-  //     image: "/prod1.png",
-  //     description: "Hand-woven pure silk saree with intricate zari work.",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Designer Sunglasses",
-  //     price: "189",
-  //     image: "/prod2.png",
-  //     description: "Handcrafted leather wallet with RFID protection.",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Silk Scarf",
-  //     price: "89",
-  //     image: "/prod3.png",
-  //     description: "Elegant silk scarf with floral prints.",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Gold Bracelet",
-  //     price: "159",
-  //     image: "/prod1.png",
-  //     description: "Stunning gold bracelet with intricate designs.",
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "Crystal Necklace",
-  //     price: "249",
-  //     image: "/prod2.png",
-  //     description: "Exquisite crystal necklace for special occasions.",
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Pearl Earrings",
-  //     price: "129",
-  //     image: "/prod3.png",
-  //     description: "Classic pearl earrings with modern design.",
-  //   },
-  //   {
-  //     id: 7,
-  //     name: "Leather Wallet",
-  //     price: "79",
-  //     image: "/prod1.png",
-  //     description: "Premium leather wallet with multiple compartments.",
-  //   },
-  //   {
-  //     id: 8,
-  //     name: "Silver Watch",
-  //     price: "199",
-  //     image: "/prod2.png",
-  //     description: "Elegant silver watch with minimalist design.",
-  //   },
-  // ];
-
-  // WORKS FINEEEEE
-  // const slideProducts = (direction) => {
-  //   const container = productContainerRef.current;
-
-  //   // Get screen width to determine if we're on mobile
-  //   const isMobile = window.innerWidth < 1024;
-
-  //   // Adjust sizes based on viewport
-  //   const productWidth = isMobile ? 180 : 240; // mobile: 180px, desktop: 240px
-  //   const gap = isMobile ? 16 : 24; // mobile: 16px, desktop: 24px
-  //   const itemsToShow = 2; // Always show 2 items regardless of screen size
-  //   const scrollAmount = (productWidth + gap) * itemsToShow;
-
-  //   const maxScroll = container.scrollWidth - container.clientWidth;
-  //   const currentScroll = gsap.getProperty(container, "x") || 0;
-
-  //   let newScroll;
-  //   if (direction === "next") {
-  //     // Ensure we don't scroll past the end
-  //     const remainingScroll = maxScroll + currentScroll;
-  //     // Use the smaller value between standard scroll amount and remaining space
-  //     newScroll = currentScroll - Math.min(scrollAmount, remainingScroll);
-  //   } else {
-  //     // For previous, keep the same logic
-  //     newScroll = Math.min(0, currentScroll + scrollAmount);
-  //   }
-
-  //   gsap.to(container, {
-  //     x: newScroll,
-  //     duration: 1.2,
-  //     ease: "power2.inOut",
-  //     onComplete: () => {
-  //       setCanScrollLeft(newScroll < 0);
-  //       setCanScrollRight(Math.abs(newScroll) < maxScroll);
-  //     },
-  //   });
-  // };
 
   const slideProducts = (direction) => {
     const container = productContainerRef.current;
@@ -270,14 +174,6 @@ export default function TopProducts() {
                       className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 
                                opacity-0 group-hover:opacity-100 transition-all duration-300"
                     />
-                    {/* <button
-                      className="absolute bottom-4 left-4 right-4 py-2 bg-white/90 
-                                 backdrop-blur-sm text-sm font-medium opacity-0 translate-y-4 
-                                 transition-all duration-300 group-hover:opacity-100 
-                                 group-hover:translate-y-0 hover:bg-black hover:text-white"
-                    >
-                      Quick View
-                    </button> */}
                   </div>
 
                   <div className="mt-4 space-y-2">
@@ -291,7 +187,7 @@ export default function TopProducts() {
                       <span className="text-base lg:text-lg font-light">
                         ${product.price}
                       </span>
-                      <button
+                      {/* <button
                         className="relative overflow-hidden px-3 lg:px-4 py-1.5 
                                    bg-transparent border border-[#FB8000] group/btn"
                       >
@@ -305,7 +201,24 @@ export default function TopProducts() {
                           className="absolute inset-0 bg-[#FB8000] transform scale-x-0 origin-left 
                                    transition-transform duration-300 group-hover/btn:scale-x-100"
                         />
-                      </button>
+                      </button> */}
+                      <Link to={`/product/${product.id}`}>
+                        <button
+                          className="relative overflow-hidden px-3 lg:px-4 py-1.5 
+               bg-transparent border border-[#FB8000] group/btn"
+                        >
+                          <span
+                            className="relative z-10 text-sm transition-colors duration-300 
+                 group-hover/btn:text-white"
+                          >
+                            View
+                          </span>
+                          <div
+                            className="absolute inset-0 bg-[#FB8000] transform scale-x-0 origin-left 
+                 transition-transform duration-300 group-hover/btn:scale-x-100"
+                          />
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

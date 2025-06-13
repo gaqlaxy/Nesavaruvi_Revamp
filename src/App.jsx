@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
+import HeroProducts from "./pages/HeroProducts";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/products/:category" element={<ProductsPage />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/heroproducts" element={<HeroProducts />} />
             <Route path="/cart" element={<CartPage />} />
           </Routes>
 

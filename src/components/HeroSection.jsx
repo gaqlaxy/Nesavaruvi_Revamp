@@ -1,12 +1,19 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
   const heroRef = useRef();
   const buttonRefs = useRef([]);
+  const navigate = useNavigate();
+
+  // Handle button click navigation
+  const handleHeroGridClick = () => {
+    navigate("/heroproducts");
+  };
 
   useEffect(() => {
     // Initial animation for text elements
@@ -55,6 +62,7 @@ export default function HeroSection() {
             </h2>
             <div className="relative inline-block">
               <button
+                onClick={handleHeroGridClick}
                 ref={(el) => (buttonRefs.current[0] = el)}
                 className="bg-white relative text-black px-8 py-3 rounded-full font-medium overflow-hidden group-hover:pr-12 transition-all duration-300"
               >
