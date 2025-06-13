@@ -36,7 +36,7 @@ export default function FAQSection() {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="border border-gray-200 rounded-xl overflow-hidden bg-gray-50"
+              className="border border-gray-200  rounded-xl overflow-hidden bg-gray-50"
             >
               <button
                 className="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none"
@@ -46,7 +46,7 @@ export default function FAQSection() {
               >
                 <span className="font-medium text-lg">{faq.question}</span>
                 <span
-                  className="ml-4 text-2xl transition-transform duration-300"
+                  className="ml-4 text-2xl transition-transform duration-300 text-orange-500"
                   style={{
                     transform:
                       openIndex === idx ? "rotate(45deg)" : "rotate(0deg)",
