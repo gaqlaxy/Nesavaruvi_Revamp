@@ -3,8 +3,9 @@ import gsap from "gsap";
 import { HiOutlineMenu, HiShoppingCart, HiX } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import CartSidebar from "./CartSidebar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import Scrollspy from "react-scrollspy";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -61,7 +62,6 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    // <nav className=" w-full top-10 z-50 bg-white shadow-sm">
     <nav
       // Control Shadow for mobile nav
 
@@ -75,29 +75,125 @@ export default function Navbar() {
         {/* Logo */}
         {/* <div className="text-2xl font-bold">Boutique</div>
          */}
-        <img
-          // src="./logo.png"
-          src={logo}
-          alt="Nesavaruvi Boutique's Logo"
-          className="h-12 md:h-12 object-contain"
-          onError={(e) => {
-            e.currentTarget.onerror = null;
-            e.currentTarget.src = "/logo.png";
-          }}
-        />
+        <Link to="/">
+          <img
+            // src="./logo.png"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            src={logo}
+            alt="Nesavaruvi Boutique's Logo"
+            className="h-12 md:h-12 object-contain"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = "/logo.png";
+            }}
+          />
+        </Link>
 
         {/* Navigation Links */}
-        <div className="flex space-x-8">
-          {["Products", "BestSellers", "About", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="hover:text-[#FB8000] transition-colors text-lg font-bold tracking-wide"
+        {/* <div className="flex space-x-8">
+          <ul className="flex gap-6">
+            <li>
+              <a
+                href="#"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className={({ isActive }) =>
+                  isActive ? "text-[#FB8000] font-semibold" : "text-gray-700"
+                }
+                end
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#categories"
+                className={({ isActive }) =>
+                  isActive ? "text-[#FB8000] font-semibold" : "text-gray-700"
+                }
+              >
+                Categories
+              </a>
+            </li>
+            <li>
+              <NavLink
+                to="/top-products"
+                className={({ isActive }) =>
+                  isActive ? "text-[#FB8000] font-semibold" : "text-gray-700"
+                }
+              >
+                Top Products
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "text-[#FB8000] font-semibold" : "text-gray-700"
+                }
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </div> */}
+        <Scrollspy
+          items={["home", "topproducts", "categories", "contact"]}
+          currentClassName="text-[#FB8000] font-semibold text-lg"
+          className="flex gap-6"
+          offset={-80} // adjust if you have a fixed navbar
+        >
+          <li>
+            <button
+              onClick={() => {
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
             >
-              {item}
-            </a>
-          ))}
-        </div>
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                document
+                  .getElementById("topproducts")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+            >
+              Top Products
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={() => {
+                document
+                  .getElementById("categories")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+            >
+              Categories
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={() => {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+            >
+              Contact
+            </button>
+          </li>
+        </Scrollspy>
 
         {/* Cart */}
         <Link to="/cart" className="relative flex items-center space-x-2">

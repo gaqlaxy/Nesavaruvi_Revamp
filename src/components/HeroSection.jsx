@@ -48,6 +48,7 @@ export default function HeroSection() {
 
   return (
     <section
+      id="home"
       ref={heroRef}
       className="h-screen grid md:grid-cols-2 sm:grid-cols-1 relative overflow-hidden"
     >

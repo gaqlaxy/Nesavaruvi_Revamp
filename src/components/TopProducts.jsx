@@ -85,8 +85,9 @@ export default function TopProducts() {
 
   return (
     <section
+      id="topproducts"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-white to-neutral-50/50"
+      className="py-24 mt-20 bg-gradient-to-b from-white to-neutral-50/50"
     >
       <div className="max-w-[1400px] mx-auto px-4">
         {/* Layout container */}
