@@ -2,10 +2,11 @@ import React from "react";
 import Herosection from "../components/HeroSection";
 import TopProducts from "../components/TopProducts";
 import Categories from "../components/Categories";
-import About from "../components/About";
+// import About from "../components/About";
 import Testimonials from "../components/Testimonials";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Contact from "../components/Contact";
+import FAQSection from "../components/FAQSection.jsx";
 
 export default function HomePage() {
   const products = [
@@ -48,9 +49,10 @@ export default function HomePage() {
       <Herosection />
       <TopProducts products={products} />
       <Categories />
-      <About />
-      <Testimonials />
+      {/* <About /> */}
       <WhyChooseUs />
+      <Testimonials />
+      <FAQSection />
       <Contact />
     </>
   );
