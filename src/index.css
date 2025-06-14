@@ -75,7 +75,7 @@
   }
 
   .drawer-footer {
-    margin-top: 20rem;
+    margin-top: 6rem;
     padding-top: 1rem;
   }
 
@@ -86,7 +86,7 @@
     margin: 1rem 0;
   }
 
-  .newsletter {
+  /* .newsletter {
     margin-bottom: 1rem;
   }
 
@@ -119,6 +119,7 @@
   .subscribe-btn:hover {
     background-color: #e36f00;
   }
+    */
 
   .socials {
     display: flex;
@@ -135,6 +136,32 @@
 
   .socials a:hover {
     color: #fb8000;
+  }
+
+  .newsletter-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .newsletter-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .newsletter-form button {
+    background-color: #fb8000;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .newsletter-form button:hover {
+    background-color: #e26f00;
   }
 
   /* Preloader  */

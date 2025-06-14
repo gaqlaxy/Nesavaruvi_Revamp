@@ -279,6 +279,8 @@ import CartSidebar from "./CartSidebar";
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Scrollspy from "react-scrollspy";
+import emailjs from "emailjs-com";
+import { i } from "framer-motion/client";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -292,6 +294,29 @@ export default function Navbar() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const mobileMenuAnimRef = useRef(null);
   const overlayAnimRef = useRef(null);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+
+        "#newsletter-form",
+        import.meta.env.VITE_EMAILJS_USER_ID
+      )
+      .then(
+        () => {
+          alert("Thank you for subscribing!");
+          e.target.reset();
+        },
+        (error) => {
+          console.error("Subscription failed:", error.text);
+          alert("Something went wrong. Please try again.");
+        }
+      );
+  };
 
   useLayoutEffect(() => {
     if (isMenuVisible && isOpen) {
@@ -591,11 +616,10 @@ export default function Navbar() {
             <div className="drawer-footer">
               <hr className="divider" />
               <div className="newsletter">
-                <p className="newsletter-text">Subscribe to our Newsletter</p>
-                <form
+                {/* <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    // handle subscription logic here
+
                     alert("Subscribed!");
                   }}
                 >
@@ -608,6 +632,21 @@ export default function Navbar() {
                   <button type="submit" className="subscribe-btn">
                     Subscribe
                   </button>
+                </form> */}
+                <form
+                  id="newsletter-form"
+                  onSubmit={handleSubscribe}
+                  className="newsletter-form"
+                >
+                  <h3>Subscribe to our Newsletter</h3>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    className="outline-none border border-gray-300 rounded-md p-2 w-full mb-2 focus:ring-[#FB8000]"
+                  />
+                  <button type="submit">Subscribe</button>
                 </form>
               </div>
 
