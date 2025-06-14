@@ -373,7 +373,7 @@ export default function Navbar() {
     <nav
       // Control Shadow for mobile nav
 
-      className={`fixed  w-full top-10 z-50 bg-white transition-shadow duration-300 ${
+      className={`fixed  w-full top-8 z-50 bg-white transition-shadow duration-300 ${
         hasScrolled ? " " : ""
         // hasScrolled ? "shadow-sm, backdrop-blur, bg-white/90" : ""
       }`}
@@ -506,7 +506,7 @@ export default function Navbar() {
           {/* Drawer */}
           <div
             ref={mobileMenuAnimRef}
-            className="fixed top-10 right-0 w-screen h-screen bg-white/80 backdrop-blur-md shadow-lg z-50 p-6 flex flex-col md:hidden"
+            className="fixed top-8 right-0 w-screen h-screen bg-white/80 backdrop-blur-md shadow-lg z-50 p-6 flex flex-col md:hidden"
           >
             <div className="flex justify-between items-center mb-8">
               <Link to="/">

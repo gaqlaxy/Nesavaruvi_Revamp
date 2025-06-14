@@ -10,6 +10,7 @@ import ProductsPage from "./pages/ProductsPage";
 import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
 import HeroProducts from "./pages/HeroProducts";
+import RotatingText from "./components/RotatingText";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +28,8 @@ export default function App() {
         <Preloader onComplete={() => setLoading(false)} />
       ) : (
         <>
-          <Marquee texts={texts} />
+          {/* <Marquee texts={texts} /> */}
+          <RotatingText texts={texts} />
           <Navbar />
 
           <Routes>
