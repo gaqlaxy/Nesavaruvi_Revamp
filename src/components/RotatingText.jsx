@@ -6,7 +6,7 @@ export default function Marquee({ texts }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIndex((prev) => (prev + 1) % texts.length);
-    }, 2000); // 5 seconds per message
+    }, 5000); // 5 seconds per message
     return () => clearTimeout(timer);
   }, [index, texts.length]);
 

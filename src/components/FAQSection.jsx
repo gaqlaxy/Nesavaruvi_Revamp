@@ -36,10 +36,10 @@ export default function FAQSection() {
           {faqs.map((faq, idx) => (
             <div
               key={idx}
-              className="border border-gray-200  rounded-xl overflow-hidden bg-gray-50"
+              className="border border-gray-200  rounded-xl overflow-hidden bg-gray-50 transition-all duration-300 hover:shadow-lg"
             >
               <button
-                className="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none"
+                className="w-full flex justify-between items-center px-6 py-4 text-left cursor-pointer  focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 aria-expanded={openIndex === idx}
                 aria-controls={`faq-answer-${idx}`}
