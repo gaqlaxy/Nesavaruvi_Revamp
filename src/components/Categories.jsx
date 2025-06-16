@@ -143,12 +143,17 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import categories from "../data/fullProdcuts.json";
 import { useNavigate } from "react-router-dom";
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
+import useCategories from "../hooks/useCategories";
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CategoriesSection() {
   const sectionRef = useRef();
   const navigate = useNavigate();
+  const categories = useCategories();
 
   useEffect(() => {
     gsap.from(sectionRef.current.children, {
@@ -195,7 +200,7 @@ export default function CategoriesSection() {
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 auto-rows-[180px] sm:auto-rows-[220px] gap-3 sm:gap-5 grid-flow-dense">
-          {uniqueCategoryItems.map((cat, index) => (
+          {categories.map((cat, index) => (
             <div
               key={cat.id}
               onClick={() =>
