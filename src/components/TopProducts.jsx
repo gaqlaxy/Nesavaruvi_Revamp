@@ -326,6 +326,80 @@ export default function TopProducts() {
     { scope: sectionRef }
   );
 
+  useEffect(() => {
+    const container = productContainerRef.current;
+    if (!container) return;
+
+    let isDragging = false;
+    let startX = 0;
+    let scrollX = 0;
+
+    const isMobile = window.innerWidth < 1024;
+    const productWidth = isMobile ? 180 : 240;
+    const gap = isMobile ? 16 : 24;
+    const step = productWidth + gap;
+
+    const getEventX = (e) =>
+      e.type.startsWith("touch") ? e.touches[0].clientX : e.clientX;
+
+    const onDragStart = (e) => {
+      isDragging = true;
+      startX = getEventX(e);
+      scrollX = gsap.getProperty(container, "x") || 0;
+
+      if (!e.type.startsWith("touch")) {
+        e.preventDefault(); // prevent image dragging
+      }
+    };
+
+    const onDragMove = (e) => {
+      if (!isDragging) return;
+      const currentX = getEventX(e);
+      const delta = currentX - startX;
+      gsap.set(container, { x: scrollX + delta });
+    };
+
+    const onDragEnd = () => {
+      if (!isDragging) return;
+      isDragging = false;
+
+      let finalX = gsap.getProperty(container, "x");
+      let snappedX = Math.round(finalX / step) * step;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      snappedX = Math.min(0, Math.max(snappedX, -maxScroll)); // Clamp
+
+      gsap.to(container, {
+        x: snappedX,
+        duration: 0.5,
+        ease: "power2.out",
+        onComplete: () => {
+          setCanScrollLeft(snappedX < 0);
+          setCanScrollRight(Math.abs(snappedX) < maxScroll - 1);
+        },
+      });
+    };
+
+    // Mobile events
+    container.addEventListener("touchstart", onDragStart, { passive: true });
+    container.addEventListener("touchmove", onDragMove, { passive: false });
+    container.addEventListener("touchend", onDragEnd);
+
+    // Desktop events
+    container.addEventListener("mousedown", onDragStart);
+    window.addEventListener("mousemove", onDragMove);
+    window.addEventListener("mouseup", onDragEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", onDragStart);
+      container.removeEventListener("touchmove", onDragMove);
+      container.removeEventListener("touchend", onDragEnd);
+      container.removeEventListener("mousedown", onDragStart);
+      window.removeEventListener("mousemove", onDragMove);
+      window.removeEventListener("mouseup", onDragEnd);
+    };
+  }, [featured]);
+
   return (
     <section
       id="topproducts"
@@ -386,12 +460,15 @@ export default function TopProducts() {
 
           {/* Right Products */}
           <div className="w-full lg:w-[60%] overflow-hidden">
-            <div ref={productContainerRef} className="flex gap-4 lg:gap-6">
+            <div
+              ref={productContainerRef}
+              className="flex gap-4 lg:gap-6 active:cursor-grabbing"
+            >
               {featured.map((product) => (
                 <div
                   key={product.id}
-                  className="w-[180px] lg:w-[240px] flex-shrink-0 group cursor-pointer"
-                  onClick={() => navigate(`/product/${product.id}`)}
+                  className="w-[180px] lg:w-[240px] flex-shrink-0 group"
+                  // onClick={() => navigate(`/product/${product.id}`)}
                 >
                   <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                     <img
