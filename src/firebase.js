@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 // Replace these with your actual config values from Firebase Console
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDTUb1TjHUDKyg4-jZq-KM_bpdSxRLvrJk",
-    authDomain: "nesavaruvirevamp.firebaseapp.com",
-    projectId: "nesavaruvirevamp",
-    storageBucket: "nesavaruvirevamp.firebasestorage.app",
-    messagingSenderId: "527349248706",
-    appId: "1:527349248706:web:2edcd49566509d8843815b"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -17,5 +17,3 @@ const app = initializeApp(firebaseConfig);
 
 // Export Firestore
 export const db = getFirestore(app);
-
-

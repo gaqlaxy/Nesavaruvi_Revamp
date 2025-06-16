@@ -141,9 +141,9 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import categories from "../data/fullProdcuts.json";
+// import categories from "../data/fullProdcuts.json";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
+import { db } from "../firebase"; // Adjust the import based on your firebase setup
 import { collection, getDocs } from "firebase/firestore";
 import useCategories from "../hooks/useCategories";
 import { useState } from "react";
