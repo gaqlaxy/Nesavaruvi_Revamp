@@ -296,6 +296,7 @@ export default function Navbar() {
   const overlayAnimRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const cartIconRef = useRef(null);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -419,6 +420,13 @@ export default function Navbar() {
     }
   }, [location]);
 
+  useEffect(() => {
+    gsap.fromTo(
+      cartIconRef.current,
+      { scale: 1 },
+      { scale: 1.3, duration: 0.2, yoyo: true, repeat: 1 }
+    );
+  }, [cartCount]);
   return (
     <nav
       // Control Shadow for mobile nav
@@ -503,7 +511,11 @@ export default function Navbar() {
         </Scrollspy>
 
         {/* Cart */}
-        <Link to="/cart" className="relative flex items-center space-x-2">
+        <Link
+          ref={cartIconRef}
+          to="/cart"
+          className="relative flex items-center space-x-2"
+        >
           <HiShoppingCart className="w-6 h-6" />
           {cartCount > 0 && (
             <span className="bg-black text-[#FB8000] rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">

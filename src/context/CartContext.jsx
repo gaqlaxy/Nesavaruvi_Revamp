@@ -1,5 +1,5 @@
 // src/context/CartContext.jsx
-import { s } from "framer-motion/client";
+
 import React, { createContext, useState, useContext, useEffect } from "react";
 
 const CartContext = createContext();
@@ -11,20 +11,39 @@ export function CartProvider({ children }) {
     const stored = localStorage.getItem("cart");
     return stored ? JSON.parse(stored) : [];
   });
+
+  const updateQuantity = (itemId, newQty) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === itemId ? { ...item, qty: newQty } : item
+      )
+    );
+  };
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  // const addToCart = (product) => {
+  //   setCartItems((items) => {
+  //     const idx = items.findIndex((i) => i.id === product.id);
+  //     if (idx > -1) {
+  //       // increment quantity
+  //       const copy = [...items];
+  //       copy[idx].qty += 1;
+  //       return copy;
+  //     }
+  //     return [...items, { ...product, qty: 1 }];
+  //   });
+  // };
   const addToCart = (product) => {
     setCartItems((items) => {
       const idx = items.findIndex((i) => i.id === product.id);
       if (idx > -1) {
-        // increment quantity
         const copy = [...items];
-        copy[idx].qty += 1;
+        copy[idx].qty += product.qty || 1; // use passed qty
         return copy;
       }
-      return [...items, { ...product, qty: 1 }];
+      return [...items, { ...product, qty: product.qty || 1 }];
     });
   };
 
@@ -49,6 +68,7 @@ export function CartProvider({ children }) {
         clearCart,
         cartCount,
         setCartItems,
+        updateQuantity,
       }}
     >
       {children}

@@ -11,6 +11,7 @@ import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
 import HeroProducts from "./pages/HeroProducts";
 import RotatingText from "./components/RotatingText";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,23 @@ export default function App() {
           <Footer />
         </>
       )}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#fb8000",
+            color: "#fff",
+          },
+          success: {
+            duration: 3000,
+            style: {
+              background: "#fb8000",
+              color: "#fff",
+            },
+          },
+        }}
+      />
     </>
   );
 }
