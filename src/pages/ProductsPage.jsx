@@ -430,23 +430,27 @@ export default function ProductsPage() {
     });
   }, [category, sortOption]);
 
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+
+  //   if (filtered.length) {
+  //     gsap.from(productRefs.current, {
+  //       y: 50,
+  //       opacity: 0,
+  //       stagger: 0.08,
+  //       duration: 0.6,
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: containerRef.current,
+  //         start: "top 90%",
+  //       },
+  //     });
+  //   }
+  // }, [filtered]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    if (filtered.length) {
-      gsap.from(productRefs.current, {
-        y: 50,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 90%",
-        },
-      });
-    }
-  }, [filtered]);
+  }, []);
 
   const sortProducts = (products, option) => {
     return [...products].sort((a, b) => {

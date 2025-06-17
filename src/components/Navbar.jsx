@@ -463,7 +463,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={() => {
-                navigate("/")?.scrollIntoView({ behavior: "smooth" });
+                navigate("/#home")?.scrollIntoView({ behavior: "smooth" });
               }}
               className="bg-transparent border-none cursor-pointer text-lg font-semibold"
             >
