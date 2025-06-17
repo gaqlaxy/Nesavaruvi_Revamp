@@ -164,6 +164,15 @@
     background-color: #e26f00;
   }
 
+  .plus-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .plus-icon div {
+    transition: transform 0.3s ease;
+  }
   /* Preloader  */
 
   /* .preloader-container {

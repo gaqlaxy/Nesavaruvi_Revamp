@@ -276,7 +276,7 @@ import gsap from "gsap";
 import { HiOutlineMenu, HiShoppingCart, HiX } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import CartSidebar from "./CartSidebar";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Scrollspy from "react-scrollspy";
 import emailjs from "emailjs-com";
@@ -294,6 +294,8 @@ export default function Navbar() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const mobileMenuAnimRef = useRef(null);
   const overlayAnimRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -394,6 +396,29 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  const scrollToSection = (sectionId) => {
+    // If we're already on homepage, just scroll
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on another page, navigate to home with hash
+      navigate(`/#${sectionId}`);
+    }
+  };
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <nav
       // Control Shadow for mobile nav
@@ -405,9 +430,6 @@ export default function Navbar() {
     >
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
-        {/* Logo */}
-        {/* <div className="text-2xl font-bold">Boutique</div>
-         */}
         <Link to="/">
           <img
             // src="./logo.png"
@@ -433,9 +455,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={() => {
-                document
-                  .getElementById("home")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                navigate("/")?.scrollIntoView({ behavior: "smooth" });
               }}
               className="bg-transparent border-none cursor-pointer text-lg font-semibold"
             >
@@ -445,9 +465,9 @@ export default function Navbar() {
           <li>
             <button
               onClick={() => {
-                document
-                  .getElementById("topproducts")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                scrollToSection("topproducts")?.scrollIntoView({
+                  behavior: "smooth",
+                });
               }}
               className="bg-transparent border-none cursor-pointer text-lg font-semibold"
             >
@@ -458,9 +478,9 @@ export default function Navbar() {
           <li>
             <button
               onClick={() => {
-                document
-                  .getElementById("categories")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                scrollToSection("categories")?.scrollIntoView({
+                  behavior: "smooth",
+                });
               }}
               className="bg-transparent border-none cursor-pointer text-lg font-semibold"
             >
@@ -471,9 +491,9 @@ export default function Navbar() {
           <li>
             <button
               onClick={() => {
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                scrollToSection("contact")?.scrollIntoView({
+                  behavior: "smooth",
+                });
               }}
               className="bg-transparent border-none cursor-pointer text-lg font-semibold"
             >
