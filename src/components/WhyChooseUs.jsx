@@ -103,7 +103,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fff7f0] relative overflow-hidden ">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fff7f0] relative overflow-hidden h-screen ">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Video Section */}
