@@ -137,8 +137,11 @@ export default function CategoriesSection() {
       className="py-12 sm:py-20 px-4 md:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">
+        {/* <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">
           Shop by Categories
+        </h2> */}
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-8 sm:mb-12 text-center">
+          Shop by <span className="font-medium text-[#fb8000]">Categories</span>
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 auto-rows-[180px] sm:auto-rows-[220px] gap-3 sm:gap-5 grid-flow-dense">

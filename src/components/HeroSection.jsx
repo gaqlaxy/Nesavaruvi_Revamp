@@ -133,7 +133,11 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={heroRef} className="min-h-screen pt-[80px] bg-white">
+    <section
+      ref={heroRef}
+      id="home"
+      className="min-h-screen pt-[80px] bg-white"
+    >
       <div className="container mx-auto grid md:grid-cols-2 gap-8 px-4 h-[calc(100vh-80px)]">
         {/* Left: Content */}
         <div className="flex flex-col justify-center hero-text">
@@ -151,11 +155,15 @@ export default function HeroSection() {
             <span className="text-[#FB8000]">Wardrobe Story</span>
           </h1> */}
 
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          {/* <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
             Limited Time
             <br />
             <span className="text-[#FB8000]">Exclusive Deals</span>
-          </h1>
+          </h1> */}
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+            Limited Time <br />
+            <span className="font-medium text-[#fb8000]">Exclusive Deals</span>
+          </h2>
 
           {/* <p className="text-gray-600 text-lg mb-8 max-w-md">
             Where tradition meets trendsetting designs. Embrace the art of

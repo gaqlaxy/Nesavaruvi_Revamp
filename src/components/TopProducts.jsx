@@ -411,8 +411,12 @@ export default function TopProducts() {
           {/* Left Heading */}
           <div className="w-full lg:w-[40%] lg:sticky lg:top-24 lg:self-start">
             <div ref={headingRef} className="space-y-6">
-              <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
+              {/* <h2 className="text-4xl lg:text-6xl font-bold leading-tight">
                 Our Top Sellers
+              </h2> */}
+              <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+                Our{" "}
+                <span className="font-medium text-[#fb8000]">Top Sellers</span>
               </h2>
               <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
                 Discover our most coveted pieces, handpicked for their timeless

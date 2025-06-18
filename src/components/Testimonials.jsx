@@ -212,8 +212,12 @@ const Testimonials = () => {
   return (
     <section className="py-12 sm:py-20 overflow-hidden ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Hear from our customers
+        </h2> */}
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-12 text-center">
+          Hear from our{" "}
+          <span className="font-medium text-[#fb8000]">Customers</span>
         </h2>
 
         <div className={styles.carousel}>

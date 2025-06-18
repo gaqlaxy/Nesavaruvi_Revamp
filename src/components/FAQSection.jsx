@@ -175,8 +175,12 @@ export default function FAQSection() {
   return (
     <section className="py-16 px-4 bg-white" id="faq" ref={containerRef}>
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Frequently Asked Questions
+        </h2> */}
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-12 text-center">
+          Got questions? <br />
+          <span className="font-medium text-[#fb8000]">We've Got Answers</span>
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, idx) => (

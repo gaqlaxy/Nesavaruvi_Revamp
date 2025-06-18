@@ -465,7 +465,7 @@ export default function Navbar() {
               onClick={() => {
                 navigate("/#home")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+              className="bg-transparent border-none cursor-pointer text-lg font-medium"
             >
               Home
             </button>
@@ -477,7 +477,7 @@ export default function Navbar() {
                   behavior: "smooth",
                 });
               }}
-              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+              className="bg-transparent border-none cursor-pointer text-lg font-medium"
             >
               Top Products
             </button>
@@ -490,7 +490,7 @@ export default function Navbar() {
                   behavior: "smooth",
                 });
               }}
-              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+              className="bg-transparent border-none cursor-pointer text-lg font-medium"
             >
               Categories
             </button>
@@ -503,7 +503,7 @@ export default function Navbar() {
                   behavior: "smooth",
                 });
               }}
-              className="bg-transparent border-none cursor-pointer text-lg font-semibold"
+              className="bg-transparent border-none cursor-pointer text-lg font-medium"
             >
               Contact
             </button>

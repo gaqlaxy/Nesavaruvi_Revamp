@@ -470,7 +470,10 @@ export default function ProductDetail() {
         {/* RIGHT: Details */}
         <div className="space-y-6 flex flex-col justify-center">
           <div className="border-b pb-4">
-            <h1 className="text-3xl md:text-4xl font-bold">{product.name}</h1>
+            {/* <h1 className="text-3xl md:text-4xl font-bold">{product.name}</h1> */}
+            <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6">
+              {product.name}
+            </h2>
             <p className="text-2xl text-gray-800 mt-2">₹{product.price}</p>
           </div>
 

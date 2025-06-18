@@ -507,18 +507,71 @@ export default function ProductsPage() {
     <div className="max-w-7xl mx-auto px-4 pt-[160px] md:pt-[120px] pb-16">
       {/* Compact Category Header */}
       <div className="mb-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold capitalize">
+        {/* <div className="flex flex-col sm:flex-row sm:items-end  gap-4 mb-6"> */}
+        <div className="text-center mb-6">
+          {/* <h1 className="text-3xl md:text-4xl font-bold capitalize">
               {category}
-            </h1>
-            <p className="text-gray-600 mt-2">
+            </h1> */}
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 ">
+            <span className="font-medium text-[#fb8000] text-center mb-0">
+              {category}
+            </span>
+            <span className="font-light text-gray-600 text-lg my-0 py-0">
+              <br />
+              Discover our curated collection of premium{" "}
+              {category.toLowerCase()}{" "}
+            </span>
+          </h2>
+          {/* <p className="text-gray-600 mt-2">
               {filtered.length} product{filtered.length !== 1 ? "s" : ""}{" "}
               available
-            </p>
-          </div>
+            </p> */}
+        </div>
 
-          {/* Compact Filter Section */}
+        {/* Compact Filter Section */}
+        {/* <div className="flex items-center gap-4">
+            <span className="text-gray-600 hidden sm:inline">Sort by:</span>
+            <div className="relative">
+              <select
+                value={sortOption}
+                onChange={(e) => setSortOption(e.target.value)}
+                className="appearance-none bg-white border border-gray-300 rounded-lg pl-4 pr-10 py-2 text-sm focus:ring-2 focus:ring-black focus:border-transparent cursor-pointer"
+              >
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="newest">Newest Arrivals</option>
+              </select>
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div> */}
+        {/* </div> */}
+
+        {/* Optional: Small tag filters */}
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex  gap-2 mt-4">
+            {["Popular", "New", "Best Sellers"].map((tag, i) => (
+              <button
+                key={i}
+                className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 transition"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
           <div className="flex items-center gap-4">
             <span className="text-gray-600 hidden sm:inline">Sort by:</span>
             <div className="relative">
@@ -548,18 +601,6 @@ export default function ProductsPage() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Optional: Small tag filters */}
-        <div className="flex flex-wrap gap-2 mt-4">
-          {["Popular", "New", "Best Sellers"].map((tag, i) => (
-            <button
-              key={i}
-              className="text-xs px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-600 transition"
-            >
-              {tag}
-            </button>
-          ))}
         </div>
       </div>
 
@@ -607,6 +648,7 @@ export default function ProductsPage() {
               <div className="flex justify-between items-start">
                 <div>
                   <h3 className="font-semibold text-base mb-1">{item.name}</h3>
+
                   <div className="flex items-center mb-2">
                     {[...Array(5)].map((_, i) => (
                       <svg
