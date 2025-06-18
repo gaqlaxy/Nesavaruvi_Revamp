@@ -430,24 +430,6 @@ export default function ProductsPage() {
     });
   }, [category, sortOption]);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-
-  //   if (filtered.length) {
-  //     gsap.from(productRefs.current, {
-  //       y: 50,
-  //       opacity: 0,
-  //       stagger: 0.08,
-  //       duration: 0.6,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: containerRef.current,
-  //         start: "top 90%",
-  //       },
-  //     });
-  //   }
-  // }, [filtered]);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -602,7 +584,7 @@ export default function ProductsPage() {
 
               <button
                 onClick={(e) => handleAddToCart(e, item)}
-                className="absolute bottom-4 right-4 bg-black text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute bottom-4 right-4 bg-[#fb8000] text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

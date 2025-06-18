@@ -328,6 +328,11 @@ export default function ProductDetail() {
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
+  //scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const fetchProduct = async () => {
       const docRef = doc(db, "products", id);
@@ -346,15 +351,15 @@ export default function ProductDetail() {
 
   const handleAdd = () => {
     // Animation for add to cart button
-    gsap.fromTo(
-      btnRef.current,
-      { scale: 1 },
-      {
-        scale: [1.1, 1],
-        duration: 0.3,
-        ease: "power2.out",
-      }
-    );
+    // gsap.fromTo(
+    //   btnRef.current,
+    //   { scale: 1 },
+    //   {
+    //     scale: [1.1, 1],
+    //     duration: 0.3,
+    //     ease: "power2.out",
+    //   }
+    // );
 
     // Animation for quantity indicator
     const quantityIndicator = document.querySelector(".quantity-indicator");
@@ -384,25 +389,13 @@ export default function ProductDetail() {
           icon: "🛒",
           style: {
             borderRadius: "10px",
-            background: "#333",
+            background: "#fb8000",
             color: "#fff",
           },
         }
       );
     }
   };
-
-  useEffect(() => {
-    if (product) {
-      gsap.from(containerRef.current.children, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.2,
-      });
-    }
-  }, [product]);
 
   if (!product)
     return (
@@ -426,7 +419,7 @@ export default function ProductDetail() {
     >
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center text-teal-600 hover:text-teal-700 transition mb-8"
+        className="flex justify-center items-center text-[#fb8000] hover:text-[#e26f00] transition mb-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -519,7 +512,7 @@ export default function ProductDetail() {
             <button
               ref={btnRef}
               onClick={handleAdd}
-              className="flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 bg-[#fb8000] text-white px-6 py-3 rounded-lg hover:bg-[#e26f00] transition w-full sm:w-auto"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

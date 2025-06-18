@@ -518,7 +518,7 @@ export default function Navbar() {
         >
           <HiShoppingCart className="w-6 h-6" />
           {cartCount > 0 && (
-            <span className="bg-black text-[#FB8000] rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">
+            <span className="bg-[#FB8000] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs absolute -top-1 -right-1">
               {cartCount}
             </span>
           )}
