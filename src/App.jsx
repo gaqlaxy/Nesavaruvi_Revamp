@@ -12,6 +12,7 @@ import CartPage from "./pages/CartPage";
 import HeroProducts from "./pages/HeroProducts";
 import RotatingText from "./components/RotatingText";
 import { Toaster } from "react-hot-toast";
+import CustomerCare from "./pages/CustomerCare";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,8 @@ export default function App() {
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/heroproducts" element={<HeroProducts />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/customer-care" element={<CustomerCare />} />
+            <Route path="/customer-care/:section" element={<CustomerCare />} />
           </Routes>
 
           <Footer />

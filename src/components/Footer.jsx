@@ -1,127 +1,9 @@
-// import { useRef, useEffect } from "react";
-// import { FiInstagram, FiFacebook, FiTwitter, FiMail } from "react-icons/fi";
-// import gsap from "gsap";
-
-// export default function Footer() {
-//   const footerRef = useRef();
-
-//   useEffect(() => {
-//     gsap.from(footerRef.current, {
-//       opacity: 0,
-//       y: 30,
-//       duration: 1,
-//       ease: "power3.out",
-//     });
-//   }, []);
-
-//   return (
-//     <footer ref={footerRef} className="bg-gray-900 text-gray-300 pt-12 pb-6">
-//       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-//         {/* Brand */}
-//         <div>
-//           <h3 className="text-2xl font-bold text-white mb-4">Nesavaruvi</h3>
-//           <p className="text-sm">
-//             Bringing you handcrafted elegance, one stitch at a time.
-//           </p>
-//         </div>
-
-//         {/* Shop Links */}
-//         <div>
-//           <h4 className="font-semibold text-white mb-3">Shop</h4>
-//           <ul className="space-y-2 text-sm">
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 New Arrivals
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 Best Sellers
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 Collections
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 Sale
-//               </a>
-//             </li>
-//           </ul>
-//         </div>
-
-//         {/* Support Links */}
-//         <div>
-//           <h4 className="font-semibold text-white mb-3">Support</h4>
-//           <ul className="space-y-2 text-sm">
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 Contact Us
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 FAQ
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 Shipping & Returns
-//               </a>
-//             </li>
-//             <li>
-//               <a href="#" className="hover:text-white">
-//                 Privacy Policy
-//               </a>
-//             </li>
-//           </ul>
-//         </div>
-
-//         {/* Newsletter & Social */}
-//         <div>
-//           <h4 className="font-semibold text-white mb-3">Stay Connected</h4>
-//           <form className="flex mb-4">
-//             <input
-//               type="email"
-//               placeholder="Your email"
-//               className="flex-1 px-3 py-2 rounded-l-lg focus:outline-none text-white bg-gray-800 placeholder-gray-500"
-//             />
-//             <button
-//               type="submit"
-//               className="bg-orange-600 hover:bg-orange-700 px-4 rounded-r-lg text-white"
-//             >
-//               <FiMail size={20} />
-//             </button>
-//           </form>
-//           <div className="flex space-x-4 text-xl">
-//             <a href="#" className="hover:text-white">
-//               <FiInstagram />
-//             </a>
-//             <a href="#" className="hover:text-white">
-//               <FiFacebook />
-//             </a>
-//             <a href="#" className="hover:text-white">
-//               <FiTwitter />
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
-//         © {new Date().getFullYear()} Nesavaruvi Boutique. All rights reserved.
-//       </div>
-//     </footer>
-//   );
-// }
-
-// =================================
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerRef = useRef();
@@ -290,29 +172,36 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Customer Care */}
           <div
             ref={(el) => (elementsRef.current[2] = el)}
             className="space-y-6"
           >
             <h3 className="text-lg font-bold text-white">Customer Care</h3>
             <ul className="space-y-3">
-              {[
-                "Contact Us",
-                "FAQs",
-                "Shipping Policy",
-                "Returns & Exchanges",
-                "Size Guide",
-              ].map((link, i) => (
-                <li key={i}>
-                  <a
-                    href="#"
-                    className="hover:text-[#FB8000] transition-colors"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link
+                  to="/customer-care/shipping"
+                  className="hover:text-[#FB8000] transition-colors"
+                >
+                  Shipping Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/customer-care/returns"
+                  className="hover:text-[#FB8000] transition-colors"
+                >
+                  Returns & Exchanges
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/customer-care/support"
+                  className="hover:text-[#FB8000] transition-colors"
+                >
+                  Customer Support
+                </Link>
+              </li>
             </ul>
           </div>
 
