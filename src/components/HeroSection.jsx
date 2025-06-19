@@ -138,7 +138,7 @@ export default function HeroSection() {
       id="home"
       className="min-h-screen pt-[80px] bg-white"
     >
-      <div className="container mx-auto grid md:grid-cols-2 gap-8 px-8 h-[calc(100vh-80px)]">
+      <div className="container mx-auto max-w-[1400px] grid md:grid-cols-2 gap-8 px-8 h-[calc(100vh-80px)]">
         {/* Left: Content */}
         <div className="flex flex-col justify-center hero-text">
           {/* <span className="text-[#FB8000] font-medium tracking-wider mb-4">
