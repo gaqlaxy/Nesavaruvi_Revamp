@@ -254,7 +254,11 @@ export default function HeroProducts() {
   return (
     <section className="max-w-7xl mx-auto px-4 pt-[120px] pb-20">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-3">Special Offers</h1>
+        {/* <h1 className="text-4xl font-bold mb-3">Special Offers</h1> */}
+        <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-3">
+          Special <span className="font-medium text-[#fb8000]">Offers</span>
+        </h2>
+
         <p className="text-gray-600 max-w-2xl mx-auto">
           Exclusive discounts just for you. Limited time offers on our featured
           products.

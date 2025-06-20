@@ -136,7 +136,7 @@ export default function HeroSection() {
     <section
       ref={heroRef}
       id="home"
-      className="min-h-screen pt-[80px] bg-white"
+      className="min-h-screen pt-[150px] md:pt-[120px] bg-white"
     >
       <div className="container mx-auto max-w-[1400px] grid md:grid-cols-2 gap-8 px-8 h-[calc(100vh-80px)]">
         {/* Left: Content */}

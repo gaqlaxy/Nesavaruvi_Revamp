@@ -404,7 +404,7 @@ export default function TopProducts() {
     <section
       id="topproducts"
       ref={sectionRef}
-      className="py-24 mt-20 bg-gradient-to-b from-white to-neutral-50/50"
+      className="md:py-24 sm:py-16 mt-20 bg-gradient-to-b from-white to-neutral-50/50"
     >
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-12">
