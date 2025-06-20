@@ -13,6 +13,7 @@ import HeroProducts from "./pages/HeroProducts";
 import RotatingText from "./components/RotatingText";
 import { Toaster } from "react-hot-toast";
 import CustomerCare from "./pages/CustomerCare";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/customer-care" element={<CustomerCare />} />
             <Route path="/customer-care/:section" element={<CustomerCare />} />
           </Routes>
+          <WhatsAppButton />
 
           <Footer />
         </>
